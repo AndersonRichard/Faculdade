@@ -1,0 +1,21 @@
+O objetivo destes exercícios é praticar a identificação de classes e implementação delas em código Java.
+1.	Você deve criar as seguintes classes:
+1.	Círculo
+2.	Quadrilátero
+3.	Triângulo
+Cada classe deve possuir como atributos as características necessárias para o cálculo da area e do perímetro do elemento que ela representa. Estes atributos devem ser criados de forma que após a instanciação da classe não seja possível a alteração dos mesmos. Você deve criar também um método calculaArea de cada classe.
+Após isto deve criar uma classe chamada ManipuladorDeElementos. Esta classe deve ter métodos que recebem como parâmetro um elemento e apresente informações sobre eles:
+4.	Círculo ⇒ Deve mostrar area, perímetro, raio
+5.	Quadrilátero ⇒ Deve mostrar area, perímetro e se é quadrado ou retângulo
+6.	Triângulo ⇒ Deve mostrar area, perímetro e sua classificação (escaleno, isósceles ou equilátero)
+Faz parte do exercício identificar quais atributos e métodos devem ser públicos ou privados.
+Existem várias formas de implementar esta solução. Teste algumas e veja qual se encaixa melhor da forma que você espera.
+Exemplo das chamadas dos métodos e classes:
+public static void main(String[] args){ 
+GerenciadorDeElementos gerenciador = new GerenciadorDeElementos(); 
+Triangulo tri = new Triangulo(10, 12, 12, 10, 10);
+ gerenciador.obterInformacoes(tri); 
+} // Resposta 
+// A area do triangulo eh: 50 
+// O perímetro do triangulo eh: 34 
+// O triangulo eh: isósceles
