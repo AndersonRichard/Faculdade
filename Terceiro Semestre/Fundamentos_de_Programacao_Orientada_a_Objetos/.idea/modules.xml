@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Biologo/Biologo.iml" filepath="$PROJECT_DIR$/Biologo/Biologo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Exercicio-04/Exercicio-04.iml" filepath="$PROJECT_DIR$/Exercicio-04/Exercicio-04.iml" />
       <module fileurl="file://$PROJECT_DIR$/Fundamentos_de_Programacao_Orientada_a_Objetos.iml" filepath="$PROJECT_DIR$/Fundamentos_de_Programacao_Orientada_a_Objetos.iml" />
     </modules>
