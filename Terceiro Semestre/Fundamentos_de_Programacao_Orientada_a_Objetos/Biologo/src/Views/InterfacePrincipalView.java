@@ -40,6 +40,7 @@ public class InterfacePrincipalView {
                     break;
                 case 3:
                     System.out.println("Excluir um animal pelo Id");
+                    
                     break;
                 case 4:
                     System.out.println("Buscar um animal pelo Id");
