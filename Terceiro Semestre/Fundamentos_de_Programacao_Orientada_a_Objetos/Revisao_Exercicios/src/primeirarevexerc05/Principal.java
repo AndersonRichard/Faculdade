@@ -1,2 +1,4 @@
-package primeirarevexerc05;public class Principal {
+package primeirarevexerc05;
+
+public class Principal {
 }

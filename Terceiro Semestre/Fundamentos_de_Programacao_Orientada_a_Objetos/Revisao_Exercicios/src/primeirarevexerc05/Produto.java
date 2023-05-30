@@ -1,2 +1,4 @@
-package primeirarevexerc05;public class Produto {
+package primeirarevexerc05;
+
+public class Produto {
 }

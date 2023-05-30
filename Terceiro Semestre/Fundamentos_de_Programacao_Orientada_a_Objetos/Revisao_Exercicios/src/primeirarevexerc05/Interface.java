@@ -1,2 +1,4 @@
-package primeirarevexerc05;public class Interface {
+package primeirarevexerc05;
+
+public class Interface {
 }
