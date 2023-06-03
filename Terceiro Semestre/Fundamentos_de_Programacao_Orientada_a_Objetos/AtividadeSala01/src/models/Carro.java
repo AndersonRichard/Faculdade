@@ -1,29 +1,24 @@
 package models;
 
 public class Carro extends Automovel{
+    private double tamanhoPortaMalas;
 
-    private int tamPortaMalas;
-
-    public int getTamPortaMalas() {
-        return tamPortaMalas;
+    public double getTamanhoPortaMalas() {
+        return tamanhoPortaMalas;
     }
 
-    public void setTamPortaMalas(int tamPortaMalas) {
-        this.tamPortaMalas = tamPortaMalas;
+    public void setTamanhoPortaMalas(double tamanhoPortaMalas) {
+        this.tamanhoPortaMalas = tamanhoPortaMalas;
     }
 
-    public void addPortaMlas(int alteraNovoTam){
-        this.tamPortaMalas = alteraNovoTam;
-        System.out.println("Alterado");
+    public void aumentarPortaMalas(double valor) {
+        this.tamanhoPortaMalas += valor;
     }
 
     @Override
     public String toString() {
-        return "Carro{" +
-                "tamPortaMalas=" + tamPortaMalas +
-                ", peso=" + getPeso() +
-                ", velocidade=" + getVelocidade() +
-                ", marca='" + getMarca() + '\'' +
-                '}';
+        return "Carro [tamanhoPortaMalas=" + tamanhoPortaMalas + ", Peso=" + getPeso() + ", Velocidade="
+                + getVelocidade() + ", Marca=" + getMarca() + "]";
     }
+
 }

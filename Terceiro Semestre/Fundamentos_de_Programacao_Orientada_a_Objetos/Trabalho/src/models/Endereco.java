@@ -1,80 +1,116 @@
 package models;
 
-public class Endereco {
-    private String id;
+public class Endereco extends ModeloBase{
     private String rua;
-    private String numero;
+    private int numero;
     private String bairro;
+    private String complemento;
+    private String cep;
     private String cidade;
     private String estado;
     private String pais;
-    private String cep;
-    private String complemento;
 
-    public Endereco(String id, String rua, String numero, String bairro, String cidade, String estado, String pais, String cep, String complemento) {
-        this.id = id;
+    public Endereco(String rua, int numero, String bairro, String complemento, String cep, String cidade, String estado, String pais) {
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
+        this.complemento = complemento;
+        this.cep = cep;
         this.cidade = cidade;
         this.estado = estado;
         this.pais = pais;
-        this.cep = cep;
-        this.complemento = complemento;
-    }
-
-    public String getId() {
-        return id;
     }
 
     public String getRua() {
         return rua;
     }
 
-    public String getNumero() {
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public int getNumero() {
         return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
     }
 
     public String getBairro() {
         return bairro;
     }
 
-    public String getCidade() {
-        return cidade;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getComplemento() {
+        return complemento;
     }
 
-    public String getPais() {
-        return pais;
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 
     public String getCep() {
         return cep;
     }
 
-    public String getComplemento() {
-        return complemento;
-    }
-    public String toString(){
-        return  "ID: " + id + "\n" +
-                "Rua: " + rua + "\n" +
-                "Número: " + numero + "\n" +
-                "Bairro: " + bairro + "\n" +
-                "Cidade: " + cidade + "\n" +
-                "Estado: " + estado + "\n" +
-                "País: " + pais + "\n" +
-                "CEP: " + cep + "\n" +
-                "Complemento: " + complemento;
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
-    public String getIdEnde() {
-        return this.id;
+    public String getCidade() {
+        return cidade;
     }
-    public boolean equals(Object obj) {
-        Endereco aux = (Endereco) obj;
-        return this.id == aux.getIdEnde();
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("""
+                Id: %s
+                Rua: %s
+                Numero: %s
+                Bairro: %s
+                Complemento: %s
+                CEP: %s
+                Cidade: %s
+                Estado: %s
+                País: %s
+                """,
+                this.id,
+                this.rua,
+                this.numero,
+                this.bairro,
+                this.complemento,
+                this.cep,
+                this.cidade,
+                this.estado,
+                this.pais);
+    }
+    public Endereco clone(){
+        Endereco clone = new Endereco(this.rua, this.numero, this.bairro, this.complemento, this.cep, this.cidade, this.estado, this.pais);
+        clone.id = this.id;
+        return clone;
     }
 }

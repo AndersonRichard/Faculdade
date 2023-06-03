@@ -1,48 +1,54 @@
 package models;
 
-import java.util.ArrayList;
-
-public class Cliente {
-    private String id;
+public class Cliente extends ModeloBase{
     private String nome;
     private String telefone;
     private String email;
-    private ArrayList<Endereco> listaEnderecos;
 
-    public Cliente(String id, String nome, String telefone, String email) {
-        this.id = id;
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Cliente(String nome, String telefone, String email) {
         this.nome = nome;
         this.telefone = telefone;
         this.email = email;
-        this.listaEnderecos = new ArrayList<>();
     }
-    public void adicionarEndereco(Endereco endereco) {
-        listaEnderecos.add(endereco);
+    public String toString() {
+        return String.format("""
+                        Id: %s
+                        Nome: %s
+                        Telefone: %s
+                        Email: %s
+                        """,
+                this.id,
+                this.nome,
+                this.telefone,
+                this.email);
     }
-    public void removerEndereco(Endereco endereco) {
-        listaEnderecos.remove(endereco);
-    }
-    public ArrayList<Endereco> getEnderecos() {
-        return listaEnderecos;
-    }
-    public String getId() {
-        return this.id;
-    }
-    public boolean equals(Object obj) {
-        Cliente aux = (Cliente) obj;
-        return this.id == aux.getId();
-    }
-
-    public String toString(){
-        String texto = "";
-        for (Endereco endereco : listaEnderecos) {
-            texto += " - " + endereco.toString() + "\n";
-        }
-        return  "ID: " + id + "\n" +
-                "Nome: " + nome + "\n" +
-                "Telefone: " + telefone + "\n" +
-                "Email: " + email + "\n" +
-                "Endereços:\n" +
-                texto;
+    public Cliente clone(){
+        Cliente clone = new Cliente(this.nome, this.telefone, this.email);
+        clone.id = this.id;
+        return clone;
     }
 }

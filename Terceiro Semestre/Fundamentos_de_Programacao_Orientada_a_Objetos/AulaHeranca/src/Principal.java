@@ -1,5 +1,7 @@
-package models;
 import models.Aluno;
+import models.Funcionario;
+import models.Professor;
+
 public class Principal {
     public static void main(String[] args) {
         Aluno a = new Aluno();
@@ -21,5 +23,5 @@ public class Principal {
         f.setSexo("Feminino");
         System.out.println(f);
 
-        }
+    }
 }
