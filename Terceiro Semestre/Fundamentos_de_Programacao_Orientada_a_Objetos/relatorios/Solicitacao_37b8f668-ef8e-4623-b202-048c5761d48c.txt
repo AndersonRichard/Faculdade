@@ -1,0 +1,33 @@
+  ========================================================================================
+    SOLICITAÇÃO DE ORÇAMENTO
+Id: 37b8f668-ef8e-4623-b202-048c5761d48c
+Data: 09/06/2023 22:06
+
+    DADOS DO EVENTO
+Evento: Aniversário
+Descrição: Uma celebração do aniversário de uma pessoa.
+
+Serviços:
+	Buffet
+	* Fornecer serviços de alimentação, incluindo planejamento de menu, preparação e apresentação de pratos deliciosos.
+		Churrasco
+		* Carnes suculentas grelhadas na hora, saladas frescas, pães, molhos típicos de churrasco.
+	Decoração Temática
+	* Criar uma decoração temática personalizada que reflita os interesses e gostos do aniversariante.
+		Tema de Princesa
+		* Decoração com tons de rosa, castelos de papelão, cortinas de tule, toalhas de mesa com estampas.
+	Entretenimento
+	* Organizar e coordenar performances, garantindo que os convidados se divirtam e desfrutem de experiências únicas. 
+		Palhaço
+		* Um palhaço animado que faz truques de mágica, brincadeiras engraçadas e esculturas de balões.
+Endereço: Alameda Manoel Antônio Sobral, Nº151 - Distrito Industrial. Pouso Alegre/Minas Gerais
+Inicio: 09/06/2023 20:00
+Término: 10/08/2023 20:00
+Observações: teste
+
+    INFORMAÇÕES DO CLIENTE
+Nome: Anderson 
+Telefone: 35998518661
+E-mail: richardererer
+
+  ========================================================================================
