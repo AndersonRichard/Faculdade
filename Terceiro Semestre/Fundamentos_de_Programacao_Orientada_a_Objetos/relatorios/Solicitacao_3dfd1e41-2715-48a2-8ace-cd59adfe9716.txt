@@ -1,0 +1,43 @@
+  ========================================================================================
+    SOLICITAÇÃO DE ORÇAMENTO
+Id: 3dfd1e41-2715-48a2-8ace-cd59adfe9716
+Data: 09/06/2023 21:21
+
+    DADOS DO EVENTO
+Evento: Aniversário
+Descrição: Uma celebração do aniversário de uma pessoa.
+
+Serviços:
+	Buffet
+	* Fornecer serviços de alimentação, incluindo planejamento de menu, preparação e apresentação de pratos deliciosos.
+		Churrasco
+		* Carnes suculentas grelhadas na hora, saladas frescas, pães, molhos típicos de churrasco.
+		Vegetariano
+		* Uma variedade de pratos vegetarianos saudáveis e saborosos, como saladas frescas e legumes grelhados.
+		Sobremesas
+		* Uma irresistível seleção de doces e sobremesas, como tortas, bolos, mousses e sorvetes.
+		Mini Salgados
+		* Mini porções de petiscos e canapés saborosos, perfeitos para eventos mais informais, como mini-hambúrgueres.
+		Internacional
+		* Uma seleção de pratos de diferentes culinárias ao redor do mundo.
+	Decoração Temática
+	* Criar uma decoração temática personalizada que reflita os interesses e gostos do aniversariante.
+		Tema de Super-Heróis
+		* Decoração com painéis de fundo com imagens de super-heróis, balões nas cores dos heróis favoritos.
+	Entretenimento
+	* Organizar e coordenar performances, garantindo que os convidados se divirtam e desfrutem de experiências únicas. 
+		Palhaço
+		* Um palhaço animado que faz truques de mágica, brincadeiras engraçadas e esculturas de balões.
+		Apresentação de Dança
+		* Um grupo de dançarinos que apresenta uma coreografia temática.
+Endereço: Av. Gabriel Garcia de Azevedo, Nº153 - Jardim Sao Fernando. Pouso Alegre/Minas Gerais
+Inicio: 09/06/2023 20:00
+Término: 09/06/2023 23:59
+Observações: teste
+
+    INFORMAÇÕES DO CLIENTE
+Nome: Anderson
+Telefone: 35998518661
+E-mail: richard-r3@dslajdaslkdjsa
+
+  ========================================================================================

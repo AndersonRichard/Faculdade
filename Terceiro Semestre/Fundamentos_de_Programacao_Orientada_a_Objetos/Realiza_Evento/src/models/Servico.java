@@ -1,12 +1,16 @@
 package models;
 
-public class Opcao extends ModeloBase{
+import java.util.ArrayList;
+
+public class Servico extends ModeloBase{
     private String nome;
     private String descricao;
+    private ArrayList<Opcao> opcoes;
 
-    public Opcao (String nome, String descricao) {
+    public Servico(String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
+        this.opcoes = new ArrayList<>();
     }
 
     public String getId() {
@@ -29,7 +33,15 @@ public class Opcao extends ModeloBase{
         this.descricao = descricao;
     }
 
+    public ArrayList<Opcao> getOpcoes() {
+        return opcoes;
+    }
 
+    public void setOpcoes(ArrayList<Opcao> opcoes) {
+        this.opcoes = opcoes;
+    }
+
+    @Override
     public String toString() {
         return String.format("""
                 Id: %s
@@ -40,8 +52,9 @@ public class Opcao extends ModeloBase{
                 this.nome,
                 this.descricao);
     }
-    public Opcao clone(){
-        Opcao clone = new Opcao(this.nome, this.descricao);
+    public Servico clone(){
+        Servico clone = new Servico(this.nome, this.descricao);
+        clone.opcoes = this.opcoes;
         clone.id = this.id;
         return clone;
     }

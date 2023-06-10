@@ -1,16 +1,14 @@
 package models;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
-public class Servico extends ModeloBase{
+public class Opcao extends ModeloBase{
     private String nome;
     private String descricao;
-    private ArrayList<String> opcoes;
 
-    public Servico(String nome, String descricao) {
+    public Opcao (String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
-        this.opcoes = new ArrayList<>();
     }
 
     public String getId() {
@@ -33,15 +31,7 @@ public class Servico extends ModeloBase{
         this.descricao = descricao;
     }
 
-    public ArrayList<String> getOpcoes() {
-        return opcoes;
-    }
 
-    public void setOpcoes(ArrayList<String> opcoes) {
-        this.opcoes = opcoes;
-    }
-
-    @Override
     public String toString() {
         return String.format("""
                 Id: %s
@@ -52,8 +42,8 @@ public class Servico extends ModeloBase{
                 this.nome,
                 this.descricao);
     }
-    public Servico clone(){
-        Servico clone = new Servico(this.nome, this.descricao);
+    public Opcao clone(){
+        Opcao clone = new Opcao(this.nome, this.descricao);
         clone.id = this.id;
         return clone;
     }

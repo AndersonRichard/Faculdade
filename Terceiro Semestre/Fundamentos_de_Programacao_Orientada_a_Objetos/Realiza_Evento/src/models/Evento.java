@@ -1,12 +1,9 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
 public class Evento extends ModeloBase{
     private String nome;
     private String descricao;
-    private HashMap<Integer, String> tipo;
     private ArrayList<Endereco> enderecos;
     private ArrayList<Servico> servicos;
 
@@ -15,7 +12,6 @@ public class Evento extends ModeloBase{
         this.descricao = descricao;
         this.enderecos = new ArrayList<>();
         this.servicos = new ArrayList<>();
-        this.tipo = new HashMap<>();
     }
 
     public String getNome() {
@@ -32,14 +28,6 @@ public class Evento extends ModeloBase{
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public HashMap<Integer, String> getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(HashMap<Integer, String> tipo) {
-        this.tipo = tipo;
     }
 
     public ArrayList<Endereco> getEnderecos() {
@@ -61,16 +49,18 @@ public class Evento extends ModeloBase{
     @Override
     public String toString() {
         return String.format("""
-                %s
+                Id: %s
                 Nome: %s
                 Descrição: %s
                 """,
-                super.toString(),
+                this.id,
                 this.nome,
                 this.descricao);
     }
     public Evento clone(){
         Evento clone = new Evento(this.nome, this.descricao);
+        clone.servicos = this.servicos;
+        clone.enderecos = this.enderecos;
         clone.id = this.id;
         return clone;
     }
