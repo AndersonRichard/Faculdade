@@ -1,0 +1,39 @@
+  ========================================================================================
+    SOLICITAÇÃO DE ORÇAMENTO
+Id: 801fbed0-5a5e-420b-a877-09b67fe75af5
+Data: 13/06/2023 19:41
+
+    DADOS DO EVENTO
+Evento: Aniversário
+Descrição: Uma celebração do aniversário de uma pessoa.
+
+Serviços:
+	Buffet
+	* Fornecer serviços de alimentação, incluindo planejamento de menu, preparação e apresentação de pratos deliciosos.
+		Churrasco
+		* Carnes suculentas grelhadas na hora, saladas frescas, pães, molhos típicos de churrasco.
+		Mini Salgados
+		* Mini porções de petiscos e canapés saborosos, perfeitos para eventos mais informais, como mini-hambúrgueres.
+		Sobremesas
+		* Uma irresistível seleção de doces e sobremesas, como tortas, bolos, mousses e sorvetes.
+	Decoração Temática
+	* Criar uma decoração temática personalizada que reflita os interesses e gostos do aniversariante.
+		Tema de Super-Heróis
+		* Decoração com painéis de fundo com imagens de super-heróis, balões nas cores dos heróis favoritos.
+	Entretenimento
+	* Organizar e coordenar performances, garantindo que os convidados se divirtam e desfrutem de experiências únicas. 
+		Show de Mágica
+		* Um mágico profissional que realiza truques fascinantes, ilusões e interage com o público.
+		Apresentação de Dança
+		* Um grupo de dançarinos que apresenta uma coreografia temática.
+Endereço: Alameda Manoel Antônio Sobral, Nº151 - Distrito Industrial. Pouso Alegre/Minas Gerais
+Inicio: 15/06/2023 09:00
+Término: 15/06/2023 22:00
+Observações: Teste
+
+    INFORMAÇÕES DO CLIENTE
+Nome: Jean
+Telefone: 11323232323
+E-mail: email@email.com
+
+  ========================================================================================
