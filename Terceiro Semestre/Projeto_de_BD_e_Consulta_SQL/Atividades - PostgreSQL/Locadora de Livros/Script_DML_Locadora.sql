@@ -20,19 +20,19 @@ INSERT INTO Livro (etiqueta, titulo, categoria, ano_lancamento, qtd_copias) VALU
 INSERT INTO Livro (etiqueta, titulo, categoria, ano_lancamento, qtd_copias) VALUES (44, 'T4', 'Cat4', 2004, 4);
 INSERT INTO Livro (etiqueta, titulo, categoria, ano_lancamento, qtd_copias) VALUES (55, 'T5', 'Cat5', 2005, 5);
 
-INSERT INTO Aluga (email, etiqueta, data_saida, data_devolucao) VALUES ('c01@email.com', 11, '01-06-2023', NULL);
-INSERT INTO Aluga (email, etiqueta, data_saida, data_devolucao) VALUES ('c02@email.com', 22, '02-06-2023', '12-06-2023');
-INSERT INTO Aluga (email, etiqueta, data_saida, data_devolucao) VALUES ('c03@email.com', 22, '03-06-2023', NULL);
-INSERT INTO Aluga (email, etiqueta, data_saida, data_devolucao) VALUES ('c04@email.com', 33, '04-06-2023', NULL);
-INSERT INTO Aluga (email, etiqueta, data_saida, data_devolucao) VALUES ('c04@email.com', 44, '05-06-2023', '15-06-2023');
+INSERT INTO Aluga (email_cliente, etiqueta_livro, data_saida, data_devolucao) VALUES ('c01@email.com', 11, '01-06-2023', NULL);
+INSERT INTO Aluga (email_cliente, etiqueta_livro, data_saida, data_devolucao) VALUES ('c02@email.com', 22, '02-06-2023', '12-06-2023');
+INSERT INTO Aluga (email_cliente, etiqueta_livro, data_saida, data_devolucao) VALUES ('c03@email.com', 22, '03-06-2023', NULL);
+INSERT INTO Aluga (email_cliente, etiqueta_livro, data_saida, data_devolucao) VALUES ('c04@email.com', 33, '04-06-2023', NULL);
+INSERT INTO Aluga (email_cliente, etiqueta_livro, data_saida, data_devolucao) VALUES ('c04@email.com', 44, '05-06-2023', '15-06-2023');
 
 INSERT INTO Autor (cpf, nome, cidade, data_nascimento, qtd_livros) VALUES ('111', 'A1', 'Cid1', '01-01-1991', 1);
 INSERT INTO Autor (cpf, nome, cidade, data_nascimento, qtd_livros) VALUES ('222', 'A2', 'Cid2', '01-01-1992', 2);
 INSERT INTO Autor (cpf, nome, cidade, data_nascimento, qtd_livros) VALUES ('333', 'A3', 'Cid3', '01-01-1993', 3);
 
-INSERT INTO Escreve (cpf, etiqueta) VALUES ('111', 11);
-INSERT INTO Escreve (cpf, etiqueta) VALUES ('222', 22);
-INSERT INTO Escreve (cpf, etiqueta) VALUES ('222', 33);
-INSERT INTO Escreve (cpf, etiqueta) VALUES ('333', 44);
-INSERT INTO Escreve (cpf, etiqueta) VALUES ('333', 55);
-INSERT INTO Escreve (cpf, etiqueta) VALUES ('333', 11);
+INSERT INTO Escreve (cpf_autor, etiqueta_livro) VALUES ('111', 11);
+INSERT INTO Escreve (cpf_autor, etiqueta_livro) VALUES ('222', 22);
+INSERT INTO Escreve (cpf_autor, etiqueta_livro) VALUES ('222', 33);
+INSERT INTO Escreve (cpf_autor, etiqueta_livro) VALUES ('333', 44);
+INSERT INTO Escreve (cpf_autor, etiqueta_livro) VALUES ('333', 55);
+INSERT INTO Escreve (cpf_autor, etiqueta_livro) VALUES ('333', 11);
