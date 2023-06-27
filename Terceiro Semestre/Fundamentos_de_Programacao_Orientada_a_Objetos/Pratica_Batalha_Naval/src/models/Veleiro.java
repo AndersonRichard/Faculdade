@@ -1,7 +1,7 @@
 package models;
 
 public class Veleiro extends Embarcacao{
-    public Veleiro(){
+    public Veleiro() {
         super();
         this.ataque = 30;
         this.defesa = 15;

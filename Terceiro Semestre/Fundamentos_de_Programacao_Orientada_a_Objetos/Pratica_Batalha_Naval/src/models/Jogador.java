@@ -8,7 +8,7 @@ public class Jogador {
     private int id;
     private ArrayList<Embarcacao> barcos;
 
-    public Jogador(int i){
+    public Jogador(int id) {
         this.vida = 100;
         this.id = id;
         this.barcos = new ArrayList<Embarcacao>();
@@ -18,6 +18,15 @@ public class Jogador {
         this.barcos.add(new Submarino());
         this.barcos.add(new Veleiro());
         this.barcos.add(new Veleiro());
+    }
+
+    public int diminuirVida(int valor) {
+        this.vida -= valor;
+        return this.vida;
+    }
+
+    public ArrayList<Embarcacao> getBarcos(){
+        return this.barcos;
     }
 
     public int getVida() {
@@ -39,9 +48,4 @@ public class Jogador {
     public int getId() {
         return id;
     }
-
-    public ArrayList<Embarcacao> getBarcos(){
-        return this.barcos;
-    }
-
 }

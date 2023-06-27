@@ -1,36 +1,46 @@
 public class Triangulo {
-    private double ladoA;
-    private double ladoB;
-    private double ladoC;
+    private double lado1;
+    private double lado2;
+    private double base;
+    private double altura;
+    private double area;
+    private double perimetro;
+    private String classificacao;
 
-    public Triangulo(double ladoA, double ladoB, double ladoC) {
-        this.ladoA = ladoA;
-        this.ladoB = ladoB;
-        this.ladoC = ladoC;
-    }
-    public double calculaArea(){
-        double p = (this.ladoA + this.ladoB + this.ladoC) / 2;
-        return Math.sqrt(p * (p - this.ladoA) * (p - this.ladoB) * (p - this.ladoC));
+    public Triangulo(double lado1, double lado2, double base, double altura) {
+        this.lado1 = lado1;
+        this.lado2 = lado2;
+        this.base = base;
+        this.altura = altura;
+
+        this.calculaArea();
+        this.calculaPerimetro();
+        this.verificaClassificacao();
     }
 
-    public double calculaPerimetro(){
-        return this.ladoA + this.ladoB + this.ladoC;
+    private void calculaArea() {
+        this.area = (base*altura)/2;
     }
 
-    public String obterClassificacao(){
-        if (this.ladoA == this.ladoB
-                && this.ladoA == this.ladoC
-                && this.ladoB == this.ladoC){
-            return "Equilatero";
-        } else {
-            return (this.ladoA != this.ladoB
-                    && this.ladoA != this.ladoC
-                    && this.ladoB != this.ladoC) ?
-                    "Escaleno" :
-                    "Isosceles";
+    private void calculaPerimetro() {
+        this.perimetro = lado1+lado2+base;
+    }
+
+    private void verificaClassificacao() {
+        if(lado1 == lado2 && lado2 == base) {
+            this.classificacao = "Equilatero";
+        }else if(lado1 == lado2 && lado2 != base) {
+            this.classificacao = "Isosceles";
+        }else {
+            this.classificacao = "Escaleno";
         }
     }
-    public String toString(){
-        return String.format("Area: %.2f | Perimetro: %.2f | Classificacao: %s", this.calculaArea(), this.calculaPerimetro(), this.obterClassificacao());
+
+    @Override
+    public String toString() {
+        return "Triangulo [area=" + area + ", perimetro=" + perimetro + ", classificacao=" + classificacao + "]";
     }
+
+
+
 }

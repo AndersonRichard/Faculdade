@@ -2,18 +2,15 @@ package models;
 
 public class Embarcacao {
     protected int tamanho;
-
-    protected int defesa;
-
     protected int ataque;
-
+    protected int defesa;
     protected int vida;
 
-    public Embarcacao(){
+    public Embarcacao() {
         this.vida = 100;
     }
 
-    public int diminuirVida(int valor){
+    public int diminuirVida(int valor) {
         this.vida -= valor;
         return this.vida;
     }
@@ -22,12 +19,12 @@ public class Embarcacao {
         return tamanho;
     }
 
-    public int getDefesa() {
-        return defesa;
-    }
-
     public int getAtaque() {
         return ataque;
+    }
+
+    public int getDefesa() {
+        return defesa;
     }
 
     public int getVida() {

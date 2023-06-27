@@ -230,11 +230,11 @@ public class Animal {
         return texto;
     }
 
-
+    @Override
     public boolean equals(Object obj) {
+        // TODO Auto-generated method stub
         Animal aux = (Animal)obj;
         return this.id == aux.getId();
     }
-
 
 }

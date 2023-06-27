@@ -1,21 +1,29 @@
 public class Quadrilatero {
+    private double base;
     private double altura;
-    private double largura;
+    private double perimetro;
+    private double area;
 
-    public Quadrilatero(double altura, double largura) {
+    public Quadrilatero(double base, double altura) {
+        super();
+        this.base = base;
         this.altura = altura;
-        this.largura = largura;
+        this.calculaArea();
+        this.calculaPerimetro();
     }
 
-    public double calcularArea(){
-        return this.altura * this.largura;
+    private void calculaArea() {
+        this.area = this.base * this.altura;
     }
 
-    public double calcularPerimetro(){
-        return (2 * this.altura) + (2 * this.largura);
+    private void calculaPerimetro() {
+        this.perimetro = this.base * 2 + this.altura * 2;
     }
 
-    public String toString(){
-        return String.format("Area: %.2f | Perimetro: %.2f | Tipo: %s", this.calcularArea(), this.calcularPerimetro(), this.altura == this.largura ? "Quadrado" : "Retangulo");
+    @Override
+    public String toString() {
+        return "Quadrilatero [perimetro=" + perimetro + ", area=" + area + "]";
     }
+
+
 }

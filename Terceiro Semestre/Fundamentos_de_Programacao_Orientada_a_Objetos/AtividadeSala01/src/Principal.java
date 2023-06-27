@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Principal {
         public static void main(String[] args) {
+            // TODO Auto-generated method stub
             Moto m = new Moto();
             m.setGarupa(false);
             m.setMarca("Yamaha");
@@ -28,5 +29,8 @@ public class Principal {
             lista.add(m);
 
             System.out.println(lista);
+
+            System.out.println(Automovel.getCont());
         }
+
 }
