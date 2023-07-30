@@ -1,7 +1,6 @@
 package Views;
 import java.text.ParseException;
 import java.util.Scanner;
-
 import Models.Animal;
 import Services.AnimalService;
 public class InterfacePrincipalView {
