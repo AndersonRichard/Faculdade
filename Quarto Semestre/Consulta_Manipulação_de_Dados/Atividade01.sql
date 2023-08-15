@@ -91,9 +91,14 @@ FROM atendimento
 GROUP BY EXTRACT(YEAR FROM data_atendimento), atendimento;
 
 -- 9 Qual o maior e o menor índice de satisfação alcançados para os atendimentos em 2023?
-	select MAX(indice_satisfacao) as "Maior Índice de Satisfação",
-    	   MIN(indice_satisfacao) as "Menor Índice de Satisfação"
+SELECT EXTRACT(YEAR FROM data_atendimento) as "Ano",
+       MAX(indice_satisfacao) as "Maior Índice de Satisfação",
+       MIN(indice_satisfacao) as "Menor Índice de Satisfação"
 	FROM atendimento
+	GROUP BY Ano
+	ORDER BY "Ano";
 	
 -- 10 Qual a média de índice de satisfação para atendimentos em que os casos foram resolvidos (T) ou não (F)?
-	
+select AVG(indice_satisfacao) as "Média de Índice de Satisfação"
+FROM atendimento
+GROUP BY resolvido;
