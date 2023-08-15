@@ -2,13 +2,14 @@ package main;
 
 import models.Cargos;
 import models.Funcionario;
+import services.CalculadoraSalario;
 
 public class Principal {
     public static void main(String[] args) {
-        Funcionario Tetse = new Funcionario(Cargos.DESENVOLVEDOR, 3000.00);
-        Funcionario Teste2 = new Funcionario(Cargos.DESENVOLVEDOR, 7000.00);
+        Funcionario Anderson = new Funcionario(Cargos.DESENVOLVEDOR, 3000.00);
+        Funcionario Alysson = new Funcionario(Cargos.DESENVOLVEDOR, 7000.00);
 
-        System.out.println(new CalcularSalario().calculaSalario(Tetse));
-        System.out.println(new CalcularSalario().calculaSalario(Teste2));
+        System.out.println(new CalculadoraSalario().calculaSalario(Anderson));
+        System.out.println(new CalculadoraSalario().calculaSalario(Alysson));
     }
 }
