@@ -6,7 +6,14 @@ public class Main {
         NotificacaoNoApp app = new NotificacaoNoApp();
         NotificacaoPorPush push = new NotificacaoPorPush();
 
-        GerenciadorDeNotificacao geradorNF = new GerenciadorDeNotificacao(email, app, push);
+        GerenciadorDeNotificacao geradorNF = new GerenciadorDeNotificacao(email);
+        geradorNF.enviarNotificacao();  
+
+        geradorNF.setNotificacao(app);
+        geradorNF.enviarNotificacao();
+
+        geradorNF.setNotificacao(push);
+        geradorNF.enviarNotificacao();
 
     }
 }

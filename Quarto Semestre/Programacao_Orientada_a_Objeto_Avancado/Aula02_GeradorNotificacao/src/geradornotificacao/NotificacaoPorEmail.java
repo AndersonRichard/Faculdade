@@ -1,7 +1,7 @@
 package geradornotificacao;
 
-public class NotificacaoPorEmail {
-    public void enviaEmail() {
+public class NotificacaoPorEmail implements Notificavel{
+    public void enviarNotificacao() {
         System.out.println("Email Concluido");
     }
 }
