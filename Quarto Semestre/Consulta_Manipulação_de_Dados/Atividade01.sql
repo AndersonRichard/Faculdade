@@ -5,100 +5,106 @@ create schema atividade01;
 show schemas;
 
 -- Criar tabela
-create table atendimento(
-id int not null primary key,
-data_atendimento date,
-atendimento boolean,
-resolvido boolean,
-tempo_atendimento int,
-indice_satisfacao int
+create table if not exists atividade(
+  id int auto_increment primary key,
+  dt_atendimento date,
+  atendido char(1),
+  resolvido char(1),
+  tempo_atendimento int,
+  indice_satisfacao int
 )
 
+-- Para excluir tabela criada
+drop table if exists atividade
+
+
 -- Inserir os valores da tabela
-insert into atendimento values
-	(41, '2022-12-03', true, true, 221, 9),
-	(42, '2022-12-05', false, false, 443, 8),
-	(43, '2022-12-06', true, true, 213, 9),
-	(44, '2022-01-13', true, true, 456, 7),
-	(45, '2022-01-15', true, true, 4564, 6),
-	(46, '2023-01-03', false, false, 3456, 5),
-	(47, '2023-02-12', true, false, 356, 3),
-	(48, '2023-02-22', true, true, 456, 5),
-	(49, '2023-02-28', true, true, 567, 6),
-	(50, '2023-03-01', true, true, 8987, 7),
-	(51, '2023-03-02', false, false, 567, 8),
-	(52, '2023-03-02', true, true, 345, 9),
-	(53, '2023-02-02', true, true, 234, 10),
-	(54, '2023-02-03', true, true, 2234, 1),
-	(55, '2023-02-13', false, false, 345, 3),
-	(56, '2023-02-09', true, false, 456, 2),
-	(57, '2022-11-03', true, false, 7568, 5),
-	(58, '2022-11-19', true, true, 5675, 7),
-	(59, '2022-11-17', true, true, 4564, 8),
-	(60, '2022-11-30', true, true, 3455, 9)
+insert into atividade (dt_atendimento, atendido, resolvido,
+                       tempo_atendimento, indice_satisfacao)
+  values ('2022-12-03','T','T',221,9),  
+         ('2022-12-05','F','F',443,8), 
+         ('2022-12-06','T','T',213,9),
+         ('2022-01-13','T','T',456,7),
+         ('2022-01-15','T','T',4564,6),
+         ('2022-01-03','F','F',3456,5),
+         ('2023-02-12','T','F',356,3),
+         ('2023-02-22','T','T',456,5),
+         ('2023-02-28','T','T',567,6),
+         ('2023-03-01','T','T',8987,7),
+         ('2023-03-02','F','F',567,8),
+         ('2023-03-02','T','T',345,9),
+         ('2023-02-02','T','T',234,10),
+         ('2023-02-03','T','T',2234,1),
+         ('2023-02-13','F','F',345,3),
+         ('2023-02-09','T','F',456,2),
+         ('2022-11-03','T','F',7568,5),
+         ('2022-11-19','T','T',5675,7),
+         ('2022-11-17','T','T',4564,8),
+         ('2022-11-30','T','T',3455,9)
 	
+-- Verificar dados da tabela
+select * from atividade 
+
 -- 1 Qual o índice médio de satisfação alcançado pela instituição?
 	select avg(indice_satisfacao) as "Índice Médio de Satisfação"
-	from atendimento
+	from atividade
 	
 -- 2 Qual o tempo total de atendimentos realizados?
 	select sum(tempo_atendimento) as "Tempo Total de Atendimento"
-	from atendimento
+	from atividade
 	
 -- 3 Considerando que cada tupla representa um atendimento, qual o total de atendimentos realizados?
 	select count(*) as "Total de Atendimentos"
-	from atendimento
-	
+	from atividade
 	
 -- 4 Qual o total de atendimentos realizados por ano? Para resolver essa questão, pesquise sobre a função extract.
-	SELECT EXTRACT(YEAR FROM data_atendimento) as "Ano",
+	SELECT EXTRACT(YEAR FROM dt_atendimento) as "Ano",
        COUNT(*) as "Total de Atendimentos"
-	FROM atendimento
+	FROM atividade
 	GROUP BY Ano
-	ORDER BY "Ano";
 
 -- 5 Qual o índice médio de satisfação por ano?
-	SELECT EXTRACT(YEAR FROM data_atendimento) as "Ano",
+	SELECT EXTRACT(YEAR FROM dt_atendimento) as "Ano",
        AVG(indice_satisfacao) as "Índice Médio de Satisfação"
-	FROM atendimento
+	FROM atividade
 	GROUP BY Ano
-	ORDER BY "Ano";
 
 -- 6 Qual o tempo médio de atendimento por ano?
-	SELECT EXTRACT(YEAR FROM data_atendimento) as "Ano",
+	SELECT EXTRACT(YEAR FROM dt_atendimento) as "Ano",
        AVG(tempo_atendimento) as "Tempo Médio de Atendimento"
-	FROM atendimento
+	FROM atividade
 	GROUP BY Ano
-	ORDER BY "Ano";
 
 -- 7 A coluna atendido indica se o cliente foi atendido (T) ou não (F). Crie uma 
 -- consulta que indique o total de atendimentos, o tempo médio de atendimento e 
 -- o índice médio de satisfação por status de atendimento.
-select atendimento,
-    COUNT(*) as "Total de Atendimentos",
-    AVG(tempo_atendimento) as "Tempo Médio de Atendimento",
-    AVG(indice_satisfacao) as "Índice Médio de Satisfação"
-FROM atendimento
-GROUP BY atendimento;
+select 
+atendido as "STATUS",
+    count(*) as "Total de Atendimentos",
+    avg(tempo_atendimento) as "Tempo Médio de Atendimento",
+    avg(indice_satisfacao) as "Índice Médio de Satisfação"
+from atividade
+group by 1
 
 -- 8  Repita a consulta anterior separando os dados também por ano.
-SELECT
-    EXTRACT(YEAR FROM data_atendimento) as "Ano",
-    COUNT(*) as "Total de Atendimentos",
-    AVG(tempo_atendimento) as "Tempo Médio de Atendimento",
-    AVG(indice_satisfacao) as "Índice Médio de Satisfação"
-FROM atendimento
-GROUP BY EXTRACT(YEAR FROM data_atendimento), atendimento;
+select
+    extract (year from dt_atendimento) as "Ano",
+    atendido as "STATUS",
+    count(*) as "Total de Atendimentos",
+    avg(tempo_atendimento) as "Tempo Médio de Atendimento",
+    avg(indice_satisfacao) as "Índice Médio de Satisfação"
+from atividade
+group by 1,2
 
 -- 9 Qual o maior e o menor índice de satisfação alcançados para os atendimentos em 2023?
-SELECT EXTRACT(YEAR FROM data_atendimento) as "Ano",
-       MAX(indice_satisfacao) as "Maior Índice de Satisfação",
-       MIN(indice_satisfacao) as "Menor Índice de Satisfação"
-	FROM atendimento
-	GROUP BY Ano
-	ORDER BY "Ano";
+select max(indice_satisfacao) as "Maior Índice de Satisfação",
+       min(indice_satisfacao) as "Menor Índice de Satisfação"
+from atividade
+where extract(year from dt_atendimento) = 2023
 	
 -- 10 Qual a média de índice de satisfação para atendimentos em que os casos foram resolvidos (T) ou não (F)?
-select AVG(indice_satisfacao) as "Média de Índice de Satisfação"
-FROM atendimento
-GROUP BY resolvido;
+select 
+atendido,
+avg(indice_satisfacao)
+from atividade
+group by 1
