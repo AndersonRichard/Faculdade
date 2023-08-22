@@ -1,2 +1,5 @@
-package geradornotificacao;public class GerenciadorDeNotificacao {
+package geradornotificacao;
+
+public class GerenciadorDeNotificacao {
+
 }

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Aula01_CalcularSalarios/Aula01_CalcularSalarios.iml" filepath="$PROJECT_DIR$/Aula01_CalcularSalarios/Aula01_CalcularSalarios.iml" />
       <module fileurl="file://$PROJECT_DIR$/Aula02_GeradorDeNotaFiscal/Aula02_GeradorDeNotaFiscal.iml" filepath="$PROJECT_DIR$/Aula02_GeradorDeNotaFiscal/Aula02_GeradorDeNotaFiscal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Aula02_GeradorNotificacao/Aula02_GeradorNotificacao.iml" filepath="$PROJECT_DIR$/Aula02_GeradorNotificacao/Aula02_GeradorNotificacao.iml" />
       <module fileurl="file://$PROJECT_DIR$/Programacao_Orientada_a_Objeto_Avancado.iml" filepath="$PROJECT_DIR$/Programacao_Orientada_a_Objeto_Avancado.iml" />
     </modules>
   </component>
