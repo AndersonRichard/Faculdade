@@ -1,28 +1,12 @@
 package geradornf;
 
+import java.util.List;
+
 public class GeradorNotaFiscal {
-    private EnviadorEmail email;
-    private NotaFiscalDao dao;
+    private List<AcaoAposGerarNotaFiscal> acoes;
 
-    public EnviadorEmail getEmail() {
-        return email;
-    }
-
-    public void setEmail(EnviadorEmail email) {
-        this.email = email;
-    }
-
-    public NotaFiscalDao getDao() {
-        return dao;
-    }
-
-    public void setDao(NotaFiscalDao dao) {
-        this.dao = dao;
-    }
-
-    public GeradorNotaFiscal(EnviadorEmail email, NotaFiscalDao dao) {
-        this.email = email;
-        this.dao = dao;
+    public GeradorNotaFiscal(List<AcaoAposGerarNotaFiscal> acoes) {
+        this.acoes = acoes;
     }
 
     public NotaFiscal gera(Fatura fatura) {
@@ -30,8 +14,10 @@ public class GeradorNotaFiscal {
 
         NotaFiscal nf = new NotaFiscal(valor, getImpostoSimples(valor));
 
-        email.enviaEmail(nf);
-        dao.persiste(nf);
+        for (AcaoAposGerarNotaFiscal acao : acoes) {
+            acao.executar(nf);
+        }
+
 
         return nf;
     }
