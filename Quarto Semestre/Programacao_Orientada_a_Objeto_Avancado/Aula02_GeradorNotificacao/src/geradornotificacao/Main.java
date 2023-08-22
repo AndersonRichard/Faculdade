@@ -7,12 +7,13 @@ public class Main {
         NotificacaoPorPush push = new NotificacaoPorPush();
 
         GerenciadorDeNotificacao geradorNF = new GerenciadorDeNotificacao(email);
-        geradorNF.enviarNotificacao();  
 
-        geradorNF.setNotificacao(app);
+        geradorNF.enviarNotificacao(); 
+
+        geradorNF.setModifica(app);
         geradorNF.enviarNotificacao();
 
-        geradorNF.setNotificacao(push);
+        geradorNF.setModifica(push);
         geradorNF.enviarNotificacao();
 
     }

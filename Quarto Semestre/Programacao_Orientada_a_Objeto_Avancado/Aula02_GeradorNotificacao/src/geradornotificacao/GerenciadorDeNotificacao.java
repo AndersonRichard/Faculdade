@@ -7,7 +7,7 @@ public class GerenciadorDeNotificacao {
         this.notificacao = notificacao;
     }
 
-    public void setNotificacao(Notificavel notificacao) {
+    public void setModifica(Notificavel notificacao) {
         this.notificacao = notificacao;
     }
 
