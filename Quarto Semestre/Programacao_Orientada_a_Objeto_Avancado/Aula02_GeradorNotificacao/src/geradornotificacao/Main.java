@@ -8,7 +8,7 @@ public class Main {
 
         GerenciadorDeNotificacao geradorNF = new GerenciadorDeNotificacao(email);
 
-        geradorNF.enviarNotificacao(); 
+        geradorNF.enviarNotificacao();
 
         geradorNF.setModifica(app);
         geradorNF.enviarNotificacao();
