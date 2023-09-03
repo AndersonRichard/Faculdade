@@ -23,7 +23,7 @@ insert into vendas values
   
 -- 1 maior valor de venda
   select max(vlr_total)
-  from vendas 
+  from vendas
   
 -- 2 maior quantidade de venda
   select max(qtd_vendida)
