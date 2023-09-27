@@ -1,24 +1,20 @@
--- Criar Database
+-- Criar schema
 create schema atividade01;
 
--- Verificar todos os schemas
+-- Verificar schema criado;
 show schemas;
 
--- Criar tabela
+-- Criar tabela 
 create table if not exists atividade(
-  id int auto_increment primary key,
-  dt_atendimento date,
-  atendido char(1),
-  resolvido char(1),
-  tempo_atendimento int,
-  indice_satisfacao int
+id int auto_increment primary key,
+dt_atendimento date,
+atendido char(1),
+resolvido char(1),
+tempo_atendimento int,
+indice_satisfacao int
 )
 
--- Para excluir tabela criada
-drop table if exists atividade
-
-
--- Inserir os valores da tabela
+-- Inserir valores na tabela
 insert into atividade (dt_atendimento, atendido, resolvido,
                        tempo_atendimento, indice_satisfacao)
   values ('2022-12-03','T','T',221,9),  
@@ -41,70 +37,76 @@ insert into atividade (dt_atendimento, atendido, resolvido,
          ('2022-11-19','T','T',5675,7),
          ('2022-11-17','T','T',4564,8),
          ('2022-11-30','T','T',3455,9)
-	
--- Verificar dados da tabela
-select * from atividade 
+         
+-- Verificar valores inseridos na tabela
+select * from atividade
 
--- 1 Qual o índice médio de satisfação alcançado pela instituição?
-	select avg(indice_satisfacao) as "Índice Médio de Satisfação"
-	from atividade
-	
--- 2 Qual o tempo total de atendimentos realizados?
-	select sum(tempo_atendimento) as "Tempo Total de Atendimento"
-	from atividade
-	
--- 3 Considerando que cada tupla representa um atendimento, qual o total de atendimentos realizados?
-	select count(*) as "Total de Atendimentos"
-	from atividade
-	
--- 4 Qual o total de atendimentos realizados por ano? Para resolver essa questão, pesquise sobre a função extract.
-	SELECT EXTRACT(YEAR FROM dt_atendimento) as "Ano",
-       COUNT(*) as "Total de Atendimentos"
-	FROM atividade
-	GROUP BY Ano
+-- 1. Qual o índice médio de satisfação alcançado pela instituição?
+select 
+avg(indice_satisfacao) as 'Indice Médio de Satisfação'
+from atividade
 
--- 5 Qual o índice médio de satisfação por ano?
-	SELECT EXTRACT(YEAR FROM dt_atendimento) as "Ano",
-       AVG(indice_satisfacao) as "Índice Médio de Satisfação"
-	FROM atividade
-	GROUP BY Ano
+-- 2. Qual o tempo total de atendimentos realizados?
+select 
+sum(tempo_atendimento) as 'Tempo Total de Atendimento'
+from atividade
 
--- 6 Qual o tempo médio de atendimento por ano?
-	SELECT EXTRACT(YEAR FROM dt_atendimento) as "Ano",
-       AVG(tempo_atendimento) as "Tempo Médio de Atendimento"
-	FROM atividade
-	GROUP BY Ano
+-- 3. Considerando que cada tupla representa um atendimento, qual o total de 
+-- atendimentos realizados?
+select 
+count(*	)
+from atividade
 
--- 7 A coluna atendido indica se o cliente foi atendido (T) ou não (F). Crie uma 
+-- 4. Qual o total de atendimentos realizados por ano? Para resolver essa questão, 
+-- pesquise sobre a função extract
+select extract(year from dt_atendimento) as 'Ano',
+	count(*) as 'Quantidade por ano'
+from atividade 
+group by 1
+
+-- 5. Qual o índice médio de satisfação por ano?
+select extract(year from dt_atendimento) as 'Ano',
+	avg(indice_satisfacao) as 'Indice Medio por Ano'
+from atividade 
+group by 1
+
+-- 6. Qual o tempo médio de atendimento por ano?
+select extract(year from dt_atendimento) as 'Ano',
+	avg(tempo_atendimento) as 'Tempo médio de atendimento'
+from atividade 
+group by 1
+
+-- 7. A coluna atendido indica se o cliente foi atendido (T) ou não (F). Crie uma 
 -- consulta que indique o total de atendimentos, o tempo médio de atendimento e 
 -- o índice médio de satisfação por status de atendimento.
 select 
-atendido as "STATUS",
-    count(*) as "Total de Atendimentos",
-    avg(tempo_atendimento) as "Tempo Médio de Atendimento",
-    avg(indice_satisfacao) as "Índice Médio de Satisfação"
+atendido as 'Status',
+count(*) as 'Tempo de atendimento',
+avg(tempo_atendimento) as 'Tempo Médio de atendimento',
+avg(indice_satisfacao) as 'Indice Médio de Satisfacao'
 from atividade
 group by 1
 
--- 8  Repita a consulta anterior separando os dados também por ano.
-select
-    extract (year from dt_atendimento) as "Ano",
-    atendido as "STATUS",
-    count(*) as "Total de Atendimentos",
-    avg(tempo_atendimento) as "Tempo Médio de Atendimento",
-    avg(indice_satisfacao) as "Índice Médio de Satisfação"
+-- 8. Repita a consulta anterior separando os dados também por ano.
+select extract(year from dt_atendimento),
+atendido as 'Status',
+count(*) as 'Tempo de atendimento',
+avg(tempo_atendimento) as 'Tempo Médio de atendimento',
+avg(indice_satisfacao) as 'Indice Médio de Satisfacao'
 from atividade
 group by 1,2
 
--- 9 Qual o maior e o menor índice de satisfação alcançados para os atendimentos em 2023?
-select max(indice_satisfacao) as "Maior Índice de Satisfação",
-       min(indice_satisfacao) as "Menor Índice de Satisfação"
+-- 9. Qual o maior e o menor índice de satisfação alcançados para os atendimentos 
+-- em 2023?
+select 
+max(indice_satisfacao) as 'Maior Indice de Satisfação',
+min(indice_satisfacao) as 'Menor Indice de Satisfação'
 from atividade
 where extract(year from dt_atendimento) = 2023
-	
--- 10 Qual a média de índice de satisfação para atendimentos em que os casos foram resolvidos (T) ou não (F)?
-select 
-atendido,
-avg(indice_satisfacao)
-from atividade
+
+-- 10.Qual a média de índice de satisfação para atendimentos em que os casos foram 
+-- resolvidos (T) ou não (F)?
+select atendido,
+  avg(indice_satisfacao)
+from atividade 
 group by 1
