@@ -14,7 +14,6 @@ public class Main {
         biblioteca.adicionarAutor(autor1);
         biblioteca.adicionarAutor(autor2);
 
-
         String tituloLivro = "O Senhor dos Anéis";
         boolean disponivel = biblioteca.verificarDisponibilidade(tituloLivro);
 
@@ -23,5 +22,7 @@ public class Main {
         } else {
             System.out.println("O livro '" + tituloLivro + "' não está disponível na biblioteca.");
         }
+
+        biblioteca.listarLivrosDisponiveis();
     }
 }

@@ -28,4 +28,13 @@ public class Biblioteca {
         }
         return false;
     }
+
+    public void listarLivrosDisponiveis() {
+        System.out.println("Livros disponíveis na biblioteca:");
+        for (Livro livro : livros) {
+            if (livro.isDisponivel()) {
+                System.out.println("- " + livro.getTitulo());
+            }
+        }
+    }
 }

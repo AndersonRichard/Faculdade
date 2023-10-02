@@ -4,7 +4,7 @@ import models.Produto;
 import models.Tamanho;
 
 public class CalcularFrete {
-    private static final double TAXA_PESO = 0.1; // Taxa por quilo
+    private static final double TAXA_PESO = 0.1;
     private static final double TAXA_TAMANHO_PEQUENO = 5.0;
     private static final double TAXA_TAMANHO_MEDIO = 10.0;
     private static final double TAXA_TAMANHO_GRANDE = 15.0;
