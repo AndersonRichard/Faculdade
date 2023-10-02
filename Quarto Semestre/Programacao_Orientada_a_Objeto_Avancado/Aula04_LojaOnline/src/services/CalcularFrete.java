@@ -1,6 +1,7 @@
 package services;
 
 import models.Produto;
+import models.Tamanho;
 
 public class CalcularFrete {
     private static final double TAXA_PESO = 0.1; // Taxa por quilo
@@ -11,19 +12,19 @@ public class CalcularFrete {
     public double calcularFrete(Produto produto) {
         double custoFrete = 0.0;
 
-        // Calcula o custo baseado no peso
+
         custoFrete += produto.getPeso() * TAXA_PESO;
 
-        // Calcula o custo baseado no tamanho
-        String tamanho = produto.getTamanho();
+
+        Tamanho tamanho = produto.getTamanho();
         switch (tamanho) {
-            case "Pequeno":
+            case PEQUENO:
                 custoFrete += TAXA_TAMANHO_PEQUENO;
                 break;
-            case "Médio":
+            case MEDIO:
                 custoFrete += TAXA_TAMANHO_MEDIO;
                 break;
-            case "Grande":
+            case GRANDE:
                 custoFrete += TAXA_TAMANHO_GRANDE;
                 break;
             default:
