@@ -21,11 +21,7 @@ public class Livro {
         return disponivel;
     }
 
-    public void emprestar() {
-        disponivel = false;
-    }
-
-    public void devolver() {
-        disponivel = true;
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
     }
 }
