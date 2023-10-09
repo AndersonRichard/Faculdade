@@ -20,4 +20,9 @@ class Missao {
     public List<Item> getRecompensa() {
         return recompensa;
     }
+    public String getDescricao() {
+        return descricao;
+    }
+
+
 }

@@ -23,4 +23,15 @@ class MundoVirtual {
     public void adicionarInimigo(Inimigo inimigo) {
         inimigos.add(inimigo);
     }
+    public List<Missao> getMissoes() {
+        return missoes;
+    }
+    public Missao encontrarMissaoPorTitulo(String titulo) {
+        for (Missao missao : missoes) {
+            if (missao.getTitulo().equalsIgnoreCase(titulo)) {
+                return missao;
+            }
+        }
+        return null;
+    }
 }

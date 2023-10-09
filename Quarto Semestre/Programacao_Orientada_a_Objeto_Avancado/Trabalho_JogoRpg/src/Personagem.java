@@ -98,4 +98,17 @@ public class Personagem {
     public List<Item> getItens() {
         return itens;
     }
+    public int getNivel() {
+        return nivel;
+    }
+
+    public Item encontrarItemPorNome(String nomeItem) {
+        for (Item item : itens) {
+            if (item.getNome().equalsIgnoreCase(nomeItem)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
 }
