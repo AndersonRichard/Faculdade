@@ -1,0 +1,84 @@
+body{
+    height: auto;
+
+}
+
+.menu{
+    margin: 0;/*Define margem*/
+    top: 0;/*Define posição superior*/
+    left: 0;/*Define posição esquerda*/
+    width: 100%;/*Define a largura do elemento como 100 por cento da tela*/
+    height: 90px;/*Define a altura do elemnto*/
+    background-color: #252831; /*Cor de fundo*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;/*Define a formatação*/
+    list-style: none;/*Remover marcadores*/
+    display: flex;/*Define como um conteiner flexivel*/
+    justify-content: center;/*Centraliza o texto */
+}
+
+.item:hover{
+    background-color:;/* Cor do formato quando o mouse passar por cima */
+}
+
+.item:hover a {
+    color: blue; /* Cor do texto quando o mouse passar por cima */
+}
+
+li{
+    margin-right: 250px;
+}
+
+a{
+    color: white;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+}
+
+.item img {
+    margin-right: 5px;
+}
+
+
+.texto {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px; 
+    color: #333; 
+    text-align: left; 
+    padding: 50px;
+}
+
+
+.layoutwhitebox {
+    background-color: #fff;
+    width: 1000px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-align: justify;
+}
+
+footer {
+    background-color: #252831;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.layoutbox {
+    background-color: #000101;
+    width: 100% !important;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
