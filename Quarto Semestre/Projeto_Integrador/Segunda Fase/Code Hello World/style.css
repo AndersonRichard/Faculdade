@@ -1,65 +1,52 @@
-body{
+*{/*Classe Universal para definir a margin de toda a página*/
+    margin: 0;
+}
+
+body{/*Classe para definir o plano de fundo do site e a altura de um elemento*/
+    background: url('imagens/body/fundosite.svg') no-repeat center center fixed;
+    background-size: cover;
     height: auto;
-
 }
 
-.menu{
-    margin: 0;/*Define margem*/
-    top: 0;/*Define posição superior*/
-    left: 0;/*Define posição esquerda*/
-    width: 100%;/*Define a largura do elemento como 100 por cento da tela*/
-    height: 90px;/*Define a altura do elemnto*/
-    background-color: #252831; /*Cor de fundo*/
-    font-family: Verdana, Geneva, Tahoma, sans-serif;/*Define a formatação*/
-    list-style: none;/*Remover marcadores*/
-    display: flex;/*Define como um conteiner flexivel*/
-    justify-content: center;/*Centraliza o texto */
+.menu{/*Classe Menu usada para definir o layout do cabeçalho*/
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 90px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
-.item:hover{
-    background-color:;/* Cor do formato quando o mouse passar por cima */
+.item:hover a {/*Classe para alterar a cor do texto quando o mouse passar por cima */
+    color: black; 
 }
 
-.item:hover a {
-    color: blue; /* Cor do texto quando o mouse passar por cima */
+li{/*Classe para definir o espaçamentos entre os itens do cabeçalho*/
+    margin-right: 50px;
 }
 
-li{
-    margin-right: 250px;
-}
-
-a{
+a{/*Classe para definir a cor do texto no cabeçalho*/
     color: white;
 }
 
-.item {
+.item {/*Classe para definir os ícones do menu*/
     display: flex;
     align-items: center;
 }
 
-.item img {
-    margin-right: 5px;
+.item img { /*Definir espaçamento do texto para os ícones do menu*/
+    margin-right: 15px;
 }
-
 
 .texto {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 24px; 
-    color: #333; 
-    text-align: left; 
+    color: white; 
+    text-align: justify; 
     padding: 50px;
-}
-
-
-.layoutwhitebox {
-    background-color: #fff;
-    width: 1000px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    text-align: justify;
+    margin-right: 20px;
 }
 
 footer {
@@ -67,18 +54,40 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+    margin: 0;
 }
 
 .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: auto;
+    margin: 0;
+    text-align: center;
 }
 
-.layoutbox {
-    background-color: #000101;
-    width: 100% !important;
-    height: 320px;
+.layoutwhitebox {
+    background-color: transparent;
+    width: 1000px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 15px;
+    text-align: justify;
+    margin: 0 auto; 
 }
+
+.layoutbox {
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .layoutwhitebox {
+      width: 90%;
+    }
+  
+    .texto {
+      font-size: 18px; 
+      margin: 10px;
+    }
+    
+   
+  }
