@@ -42,10 +42,28 @@ a{/*Classe para definir a cor do texto no cabeçalho*/
 
 .texto {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 24px; 
+    font-size: 20px; 
     color: white; 
     text-align: justify; 
     padding: 50px;
+    margin-right: 20px;
+}
+
+.titulo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px; 
+    color: white; 
+    text-align: justify; 
+    padding: 10px; 
+    margin-right: 20px;
+}
+
+.textoconteudo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px; 
+    color: white; 
+    text-align: justify; 
+    padding: 10px;
     margin-right: 20px;
 }
 
@@ -75,8 +93,24 @@ footer {
     margin: 0 auto; 
 }
 
-.layoutbox {
-    margin-bottom: 20px;
+.layouttextbox {
+    background-color: transparent;
+    width: 1000px;
+    height: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    text-align: justify;
+    margin: 0 auto;
+    padding: 10px; 
+}
+
+.lista{
+    color: white;
+    float: left;
+    font-size: 20px;
+
 }
 
 @media screen and (max-width: 768px) {
