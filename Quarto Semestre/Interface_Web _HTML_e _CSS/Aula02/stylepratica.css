@@ -1,0 +1,48 @@
+*{
+    margin: 5px;
+    text-align: left;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+p.solid {
+    border-style: solid;
+    size: 100px;
+}
+
+.vermelho{
+    border-color: red;
+}
+
+.amarelo{
+    border-color: yellow;
+}
+
+.cinza{
+    border-color: gray;
+}
+
+.margini{
+    margin-top: 15px;
+}
+
+
+.information {
+    border: 4px solid gray;
+    width: 300px;
+    text-align: center;
+}
+
+.warning {
+    border: 4px solid yellow;
+    width: 300px;
+    text-align: center;
+}
+
+.danger {
+    border: 4px solid red;
+    width: 300px;
+    text-align: center;
+}

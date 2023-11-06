@@ -1,0 +1,25 @@
+*{
+    margin-left: 20px;
+}
+
+
+h1{
+    color: rgb(38, 193, 46);
+}
+
+
+.primeiro{
+    color: brown;
+}
+
+.segundo{
+    color: cornflowerblue;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+#paragrafo1{
+   margin-top: 50px;
+}
