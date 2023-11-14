@@ -11,7 +11,7 @@ public class App {
 		Aluno a2 = new Aluno("Alysson", 120);
 		Aluno a3 = new Aluno("Caio", 125);
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-orm");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
