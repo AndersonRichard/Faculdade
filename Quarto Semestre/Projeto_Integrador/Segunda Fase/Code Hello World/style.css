@@ -1,127 +1,261 @@
-*{/*Classe Universal para definir a margin de toda a página*/
+/* ESTILO GERAL */
+* {
     margin: 0;
-}
-
-body{/*Classe para definir o plano de fundo do site e a altura de um elemento*/
-    background: url('imagens/body/fundosite.svg') no-repeat center center fixed;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: url('images/geral/fundosite.svg') no-repeat center center fixed;
     background-size: cover;
-    height: auto;
+    text-align: justify;
 }
 
-.menu{/*Classe Menu usada para definir o layout do cabeçalho*/
+body {
+    height: 100vh;
+}
+
+.interface {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+/* ESTILO DO MENU MOBILE */
+.btn-abrir-menu i{
+    color: #fff;
+    font-size: 40px;
+    position: absolute;
+    left: 0; 
+    top: 23px; 
+    margin-left: 10px;
+}
+
+.menu-mobile{
+    background-color: black;
+    height: 100vh;
+    position: fixed;
     top: 0;
     left: 0;
-    width: auto;
-    height: 90px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    list-style: none;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .9s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;  
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+.menu-mobile .btn-fechar {
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i{
+    color: #1abdd4;
+    font-size: 30px
+}
+
+.menu-mobile nav ul{
+    text-align: left;
+}
+
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 4%;
+    display: block;
+}
+
+.menu-mobile nav ul li a:hover{
+   color: #000;
+}
+
+.overlay-menu{
+    background-color: #000000a7;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+.menu-mobile.abrir-menu nav ul li {
+    display: block;
+    width: 100%;
+    padding: 10px 0; /* Ajuste o padding conforme necessário */
+    text-align: center; /* Centralizar o texto */
+}
+
+.menu-mobile.abrir-menu nav ul li a {
+    display: block;
+}
+
+/* ESTILO DO CABEÇALHO */
+header {
+    padding: 40px 4%;
+}
+
+header>.interface {
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-.item:hover a {/*Classe para alterar a cor do texto quando o mouse passar por cima */
-    color: black; 
+header a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
 }
 
-li{/*Classe para definir o espaçamentos entre os itens do cabeçalho*/
-    margin-right: 50px;
+header nav ul {
+    list-style-type: none;
 }
 
-a{/*Classe para definir a cor do texto no cabeçalho*/
-    color: white;
+header nav ul li {
+    display: inline-block;
+    padding: 0 40px;
 }
 
-.item {/*Classe para definir os ícones do menu*/
-    display: flex;
+.img-cabecalho {
+    margin-right: 10px;
     align-items: center;
+    vertical-align: middle;
 }
 
-.item img { /*Definir espaçamento do texto para os ícones do menu*/
-    margin-right: 15px;
+/* ESTILO DO TOPO DO SITE */
+section.topo-do-site {
+    padding: 40px 4%;
 }
 
-.texto {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px; 
-    color: white; 
-    text-align: justify; 
-    padding: 50px;
-    margin-right: 20px;
+section.topo-do-site .flex {
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-.titulo {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px; 
-    color: white; 
-    text-align: justify; 
-    padding: 10px; 
-    margin-right: 20px;
+/* ESTILO PONTO E VIRUGLA */
+.topo-do-site .txt-ponto-virgula p {
+    color: #fff;
+    margin: 40px 0;
+    font-size: 20px;
 }
 
-.textoconteudo{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px; 
-    color: white; 
-    text-align: justify; 
+.topo-do-site .image-ponto-virgula img {
+    position: relative;
+}
+
+/* ESTILO PYTHON */
+.topo-do-site .txt-python p {
+    color: #fff;
+    margin: 40px 0;
+    font-size: 20px;
     padding: 10px;
-    margin-right: 20px;
 }
 
-footer {
-    background-color: #252831;
-    color: white;
-    text-align: center;
+.topo-do-site .image-python img {
+    position: relative;
+}
+
+/* ESTILO GRUPO */
+.topo-do-site .txt-grupo p {
+    color: #fff;
+    margin: 40px 0;
+    font-size: 20px;
+}
+
+.topo-do-site .image-grupo img {
+    position: relative;
     padding: 20px;
-    margin: 0;
 }
 
-.footer-content {
-    max-width: auto;
-    margin: 0;
-    text-align: center;
+/* ESTILO MATERIAL */
+.topo-do-site .txt-material p {
+    color: #fff;
+    margin: 40px 0;
+    font-size: 20px;
+    padding: 10px;
 }
 
-.layoutwhitebox {
-    background-color: transparent;
-    width: 1000px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    text-align: justify;
-    margin: 0 auto; 
+.topo-do-site .image-material img {
+    position: relative;
 }
 
-.layouttextbox {
-    background-color: transparent;
-    width: 1000px;
-    height: auto; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    text-align: justify;
-    margin: 0 auto;
-    padding: 10px; 
-}
-
-.lista{
-    color: white;
-    float: left;
+/* ESTILO FEEDBACK */
+.topo-do-site .txt-feedback p {
+    color: #fff;
+    margin: 40px 0;
     font-size: 20px;
 
 }
 
-@media screen and (max-width: 768px) {
-    .layoutwhitebox {
-      width: 90%;
+.topo-do-site .txt-feedback p a {
+    color: white;
+
+}
+
+.topo-do-site .image-feedback img {
+    position: relative;
+    padding: 20px;
+}
+
+/* ESTILO RODAPÉ */
+footer {
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+
+footer .line-footer p a {
+    color: #fff;
+}
+
+.hw {
+    max-width: auto;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (max-width: 1020px) {
+    /* ESTILOS GERAIS */
+
+
+    /* CABEÇALHO */
+    .menu-desktop {
+        display: none;
     }
-  
-    .texto {
-      font-size: 18px; 
-      margin: 10px;
+
+    /* PONTO E VIRGULA */
+    .ponto-e-virgula {
+        flex-direction: column-reverse;
     }
-    
-   
-  }
+
+    /* PYTHON */
+    .python {
+        flex-direction: column;
+    }
+
+    /* GRUPO */
+    .grupo {
+        flex-direction: column-reverse;
+    }
+
+    /* MATERIAL */
+    .material {
+        flex-direction: column;
+    }
+
+    /* FEEDBACK */
+    .feedback {
+        flex-direction: column-reverse;
+    }
+
+}

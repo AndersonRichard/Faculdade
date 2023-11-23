@@ -4,73 +4,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="imagens/logo_titulo.ico" type="image/x-icon">
+
+    <!--GOOGLE FONTES-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <!--GOOGLE FONTES-->
+
+    <!--BOOTSTRAP ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!--BOOTSTRAP ICONS-->
+
+    <script src="menu.js" defer></script>
+    <link rel="shortcut icon" href="images/geral/logo_titulo.ico" type="image/x-icon">
     <title>Hello World</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div>
-        <ul class="menu">
-            <li class="item"><img src="imagens/cabecalho/home.png" alt="Home"><a href="#">Home</a></li>
-            <li class="item"><img src="imagens/cabecalho/python.png" alt="Python"><a href="python.html">Python</a></li>
-            <li class="item"><img src="imagens/cabecalho/grupo.png" alt="Grupo"><a href="grupo.html">Grupo</a></li>
-            <li class="item"><img src="imagens/cabecalho/material.png" alt="Material"><a href="material.html">Material de Apoio</a>
-            </li>
-            <li class="item"><img src="imagens/cabecalho/feedback.png" alt="Feedback"><a
-                    href="https://docs.google.com/forms/d/1VNUUBgcCIve15xUivO0OyLQGG7VTTtuKnyCwcyoWejE/viewform?edit_requested=true"  target="_blank">Feedback</a>
-            </li>
-        </ul>
-    </div>
+    <header>
+        <div class="interface">
+            <nav class="menu-desktop">
+                <ul>
+                    <li"><img class="img-cabecalho" src="images/cabecalho/home.png" alt=""><a href="#">Home</a></li>
+                        <li><img class="img-cabecalho" src="images/cabecalho/python.png" alt=""><a href="#">Python</a>
+                        </li>
+                        <li><img class="img-cabecalho" src="images/cabecalho/grupo.png" alt=""><a href="#">Grupo</a>
+                        </li>
+                        <li><img class="img-cabecalho" src="images/cabecalho/material.png" alt=""><a href="#">Material
+                                de Apoio</a></li>
+                        <li><img class="img-cabecalho" src="images/cabecalho/feedback.png" alt=""><a
+                                href="https://docs.google.com/forms/d/1VNUUBgcCIve15xUivO0OyLQGG7VTTtuKnyCwcyoWejE/viewform?edit_requested=true"
+                                target="_blank">Feedback</a></li>
+                </ul>
+            </nav>
 
-    <div class="layoutwhitebox">
-        <img src="imagens/body/logo.png" alt="Imagem logo Projeto">
-        <p class="texto">
-            O projeto Hello World tem como objetivo oferecer aulas de lógica de programação para estudantes do ensino
-            médio nas instituições da cidade de Pouso Alegre.
-        </p>
-    </div>
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div><!--btn-abrir-menu-->
 
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div>
 
-    <div class="layoutwhitebox">
-        <p class="texto">
-            Python é uma linguagem de programação de alto nível, interpretada e de propósito geral. Foi criada por Guido
-            van Rossum e lançada pela primeira vez em 1991. Python é conhecida por sua sintaxe clara e legível, o que a
-            torna uma escolha popular tanto entre programadores iniciantes quanto entre os experientes.
-        </p>
-        <img src="imagens/body/python.png" alt="Imagem logo Python">
-    </div>
+                <nav>
+                    <ul>
 
-    <div class="layoutwhitebox">
-        <img src="imagens/body/pontovirgula.png" alt="Imagem logo Grupo Ponto e Vírgula">
-        <p class="texto">
-            Para a execução do projeto, foi proposto que a equipe de desenvolvedores tivesse um nome. Portanto,
-            decidiu-se chamá-la de "Ponto e Vírgula" devido ao fato de que algumas linguagens, como Java, C++, C# e PHP,
-            requerem que um ponto e vírgula seja colocado ao final de cada linha de código para evitar erros de
-            execução, o que não é necessário no Python.
-        </p>
-    </div>
+                        <!--<li"><a href="#">Home</a></li>-->
 
-    <div class="layoutwhitebox">
-        <p class="texto">
-            O projeto Hello World conta com um extenso acervo de materiais de apoio que o auxiliarão a aprofundar-se no
-            mundo da programação, incluindo conteúdos como vídeos, podcasts, livros e atividades.
-        </p>
-        <img src="imagens/body/material.png" alt="Imagem logo material de apoio">
-    </div>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Python</a></li>
+                        <li><a href="#">Grupo</a> </li>
+                        <li><a href="#">Material de Apoio</a></li>
+                        <li><a href="https://docs.google.com/forms/d/1VNUUBgcCIve15xUivO0OyLQGG7VTTtuKnyCwcyoWejE/viewform?edit_requested=true" target="_blank">Feedback</a></li>
+                    </ul>
+                </nav>
 
-    <div class="layoutwhitebox">
-        <img src="imagens/body/feedback.png" alt="Imagem logo feedback">
-        <p class="texto">
-            Estamos sempre buscando melhorar nosso conteúdo. Se você participou de nossas aulas ou interagiu com nosso projeto, gostaríamos muito de ouvir sua opinião. Por favor, compartilhe seus comentários e sugestões preenchendo o <a href="https://docs.google.com/forms/d/1VNUUBgcCIve15xUivO0OyLQGG7VTTtuKnyCwcyoWejE/viewform?edit_requested=true" target="_blank">formulário de Feedback</a>.
-        </p>    
-    </div>
-    
+            </div><!--menu-mobile-->
+
+            <div class="overlay-menu" id="overlay-menu"></div><!--overlay-menu-->
+        </div><!--interface-->
+    </header>
+
+    <main>
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex ponto-e-virgula">
+                    <div class="txt-ponto-virgula">
+                        <p>O projeto Hello World tem como objetivo oferecer aulas de lógica de programação para
+                            estudantes do ensino
+                            médio nas instituições da cidade de Pouso Alegre.</p>
+                    </div><!--txt-ponto-virgula-->
+
+                    <div class="image-ponto-virgula">
+                        <img src="images/home/logo.png" alt="">
+                    </div><!--image-ponto-virgula-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex python">
+
+                    <div class="image-python">
+                        <img src="images/home/python.png" alt="">
+                    </div><!--image-python-->
+
+                    <div class="txt-python">
+                        <p>Python é uma linguagem de programação de alto nível, interpretada e de propósito geral. Foi
+                            criada por Guido
+                            van Rossum e lançada pela primeira vez em 1991. Python é conhecida por sua sintaxe clara e
+                            legível, o que a
+                            torna uma escolha popular tanto entre programadores iniciantes quanto entre os experientes.
+                        </p>
+                    </div><!--txt-python-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex grupo">
+                    <div class="txt-grupo">
+                        <p>Para a execução do projeto, foi proposto que a equipe de desenvolvedores tivesse um nome.
+                            Portanto,
+                            decidiu-se chamá-la de "Ponto e Vírgula" devido ao fato de que algumas linguagens, como
+                            Java, C++, C# e PHP,
+                            requerem que um ponto e vírgula seja colocado ao final de cada linha de código para evitar
+                            erros de
+                            execução, o que não é necessário no Python.</p>
+                    </div><!--txt-grupo-->
+
+                    <div class="image-grupo">
+                        <img src="images/home/pontovirgula.png" alt="">
+                    </div><!--image-grupo-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex material">
+
+                    <div class="image-material">
+                        <img src="images/home/material.png" alt="">
+                    </div><!--image-material-->
+
+                    <div class="txt-material">
+                        <p>O projeto Hello World conta com um extenso acervo de materiais de apoio que o auxiliarão a
+                            aprofundar-se no
+                            mundo da programação, incluindo conteúdos como vídeos, podcasts, livros e atividades.
+                        </p>
+                    </div><!--txt-material-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+        <section class="topo-do-site">
+            <div class="interface">
+                <div class="flex feedback">
+                    <div class="txt-feedback">
+                        <p> Estamos sempre buscando melhorar nosso conteúdo. Se você participou de nossas aulas ou
+                            interagiu com nosso projeto, gostaríamos muito de ouvir sua opinião. Por favor, compartilhe
+                            seus comentários e sugestões preenchendo o <a
+                                href="https://docs.google.com/forms/d/1VNUUBgcCIve15xUivO0OyLQGG7VTTtuKnyCwcyoWejE/viewform?edit_requested=true"
+                                target="_blank">formulário de Feedback</a>.
+                        </p>
+                    </div><!--txt-feedback-->
+
+                    <div class="image-feedback">
+                        <img src="images/home/feedback.png" alt="">
+                    </div><!--image-feedback-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+    </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; Hello World Company</p>
-        </div>
+        <div class="interface">
+            <div class="line-footer">
+                <p class="hw"><a href="mailto:projetohelloworld2023@gmail.com">projetohelloworld2023@gmail.com</a></p>
+                <p class="hw">&copy; Hello World Company</p>
+            </div><!--line-footer-->
+
+        </div><!--interface-->
     </footer>
 </body>
 
