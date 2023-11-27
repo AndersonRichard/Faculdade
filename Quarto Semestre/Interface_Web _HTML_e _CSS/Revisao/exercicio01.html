@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisao01</title>
+    <link rel="stylesheet" href="styleex01.css">
+</head>
+<body>
+    <div class="container-form">
+        <form id="contato">
+            <h2>Formulário HTML</h2>
+            <label for="name">Nome:</label>
+            <input type="text" name="name" id="name" required></input>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required></input>
+
+            <label for="reason">Motivo:</label>
+            <select name="reason" id="reason">
+                <option value="feedback">Feedback</option>
+                <option value="suporte">Suporte</option>
+                <option value="consulta">Consulta</option>
+            </select>
+
+            <button type="button" onclick="submitForm()">Enviar</button>
+        </form><!--contato-->
+        <div id="resultMessage"></div>
+    </div><!--container-form-->
+    <script src="jsexer01.js"></script>
+</body>
+</html>
