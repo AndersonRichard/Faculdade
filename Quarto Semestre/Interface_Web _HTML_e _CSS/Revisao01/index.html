@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisao01</title>
-    <link rel="stylesheet" href="styleex01.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="container-form">
-        <form id="contato">
-            <h2>Formulário HTML</h2>
+    <div class="container-forms">
+        <h2>Formulário HTML</h2>
+        <form>
             <label for="name">Nome:</label>
-            <input type="text" name="name" id="name" required></input>
+            <input type="text" name="name" id="name"></input>
 
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required></input>
+            <input type="email" name="email" id="email"></input>
 
-            <label for="reason">Motivo:</label>
-            <select name="reason" id="reason">
+            <label for="reason">Motivo do Contato</label>
+            <select name="reason" id="reason" required>
                 <option value="feedback">Feedback</option>
                 <option value="suporte">Suporte</option>
                 <option value="consulta">Consulta</option>
             </select>
-
             <button type="button" onclick="submitForm()">Enviar</button>
-        </form><!--contato-->
-        <div id="resultMessage"></div>
-    </div><!--container-form-->
-    <script src="jsexer01.js"></script>
+        </form>
+    </div><!--container-forms-->
+    <script src="script.js"></script>
 </body>
+
 </html>
