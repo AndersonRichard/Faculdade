@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Aula 13/11/2023</title>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Formulário Contato</h2>
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" name="name" id="name" required></input>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email"></input>
+            
+            <label for="message" id="message">Mensagem:</label>
+            <textarea name="name" rows="4"></textarea>  
+
+            <button type="button" onclick="submitForm()">Enviar</button>
+        </form>
+    </div>
+<!--validar campos para o trabalho-->
+    <script src="script.js"></script>
+</body>
+</html>
