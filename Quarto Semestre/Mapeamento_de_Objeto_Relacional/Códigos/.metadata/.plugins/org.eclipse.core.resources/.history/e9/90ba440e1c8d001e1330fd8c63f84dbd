@@ -1,0 +1,11 @@
+package executaveis;
+
+import models.Cliente;
+
+public class Main {
+public static void main(String[] args) {
+	Cliente cliente = new Cliente('12345142650', 'Anderson Richard da Silva', 35991629116, 'Rua Teste');
+	
+	System.out.println(cliente);
+}
+}

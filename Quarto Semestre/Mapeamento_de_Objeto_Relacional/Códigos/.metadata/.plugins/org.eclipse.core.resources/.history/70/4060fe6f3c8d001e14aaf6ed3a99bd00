@@ -1,0 +1,129 @@
+package services;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import models.Cliente;
+
+public class DataBase {
+	
+	public static void cadastrarCliente() {
+		Scanner scanner = new Scanner(System.in);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		
+		System.out.println("CPF: ");
+		String cpf = scanner.nextLine();
+		
+		System.out.println("Nome: ");
+		String nome = scanner.nextLine();
+		
+		System.out.println("Telefone: ");
+		String telefone = scanner.nextLine();
+		
+		System.out.println("Endereço: ");
+		String endereco = scanner.nextLine();
+		
+		Cliente cliente = new Cliente(cpf, nome, telefone, endereco);
+		
+		addEm(cliente);
+		
+		
+		System.out.println("Cliente Adicionado:");
+		System.out.println("CPF: " + cpf);
+        System.out.println("Nome: " + nome);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("Endereço: " + endereco);
+	}
+	
+	public static void consultarCliente() {
+		Scanner scanner = new Scanner(System.in);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		
+        try {
+        	System.out.println("Digite o CPF: ");
+            String id = scanner.nextLine();
+            
+            Cliente cliente = em.find(Cliente.class, id);
+
+            if (cliente != null) {
+            	System.out.println("Cliente encontrado:    |");
+                System.out.println("CPF: " + cliente.getCpf());
+                System.out.println("Nome: " + cliente.getNome());
+                System.out.println("Telefone: " + cliente.getTelefone());
+                System.out.println("Endereço: " + cliente.getEndereco());
+            } else {
+                System.out.println("Cliente com o CPF " + id + " não encontrado.");
+            }
+        } catch (Exception e) {
+            System.out.println("Ocorreu um erro durante a consulta: " + e.getMessage());
+        } finally {
+            em.close();
+        }
+    }
+	
+	public static void atualizarCliente() {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("Id do Veiculo: ");
+		String id = scanner.nextLine();
+			
+		em.getTransaction().begin();
+			
+		Cliente x = em.find(Cliente.class, id);
+		
+		if(x != null) {		
+			System.out.println("Digite o novo Nome: ");
+			String novoNome = scanner.nextLine();
+			
+			System.out.println("Digite o novo Telefone: ");
+			String novoTelefone = scanner.nextLine();
+			
+			System.out.println("Digite o novo Endereço: ");
+			String novoEndereco = scanner.nextLine();
+			
+			try {
+				x.setNome(novoNome);
+				x.setTelefone(novoTelefone);
+				x.setEndereco(novoEndereco);
+								
+				em.merge(x);
+				
+				em.getTransaction().commit();
+				
+                System.out.println("Cliente Atualizado:    |");
+				System.out.println("CPF: " + x.getCpf());
+                System.out.println("Nome: " + x.getNome());
+                System.out.println("Telefone: " + x.getTelefone());
+                System.out.println("Endereço: " + x.getEndereco());
+          
+			} catch(NumberFormatException e) {
+				System.out.println("Cliente Invalido");
+			}
+		} else {
+			System.out.println("Cliente com o CPF " + id + " não encontrado.");
+		}
+		em.close();
+	}
+	
+	public static void removerCliente() {
+		
+	}
+	
+	static void addEm(Cliente teste) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(teste);	
+		em.getTransaction().commit();
+			
+		
+	 }
+}

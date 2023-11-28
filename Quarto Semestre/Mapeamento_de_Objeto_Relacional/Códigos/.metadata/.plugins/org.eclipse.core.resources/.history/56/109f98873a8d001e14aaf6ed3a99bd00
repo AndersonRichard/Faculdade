@@ -1,0 +1,79 @@
+package services;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import models.Cliente;
+
+public class DataBase {
+	
+	public static void cadastrarCliente() {
+		Scanner scanner = new Scanner(System.in);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		
+		System.out.println("CPF: ");
+		String cpf = scanner.nextLine();
+		
+		System.out.println("Nome: ");
+		String nome = scanner.nextLine();
+		
+		System.out.println("Telefone: ");
+		String telefone = scanner.nextLine();
+		
+		System.out.println("Endereço: ");
+		String endereco = scanner.nextLine();
+		
+		Cliente cliente = new Cliente(cpf, nome, telefone, endereco);
+		
+		addEm(cliente);
+		
+		
+		System.out.println("Cliente Adicionado:");
+		System.out.println("CPF: " + cpf);
+        System.out.println("Nome: " + nome);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("Endereço: " + endereco);
+	}
+	
+	public static void consultarCliente() {
+		Scanner scanner = new Scanner(System.in);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		
+        try {
+        	System.out.println("Digite o CPF: ");
+            Integer id = scanner.nextInt();
+            
+            Cliente cliente = em.find(Cliente.class, id);
+
+            if (cliente != null) {
+            	System.out.println("Veículo encontrado:    |");
+                System.out.println("ID: " + cliente.getCpf());
+                System.out.println("Fabricante: " + cliente.getNome());
+                System.out.println("Descrição: " + cliente.getTelefone());
+                System.out.println("Versão: " + cliente.getEndereco());
+            } else {
+                System.out.println("Veículo com ID " + id + " não encontrado.");
+            }
+        } catch (Exception e) {
+            System.out.println("Ocorreu um erro durante a consulta: " + e.getMessage());
+        } finally {
+            em.close();
+        }
+    }
+	
+	static void addEm(Cliente teste) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(teste);	
+		em.getTransaction().commit();
+			
+		
+	 }
+}

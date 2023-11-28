@@ -1,0 +1,97 @@
+package models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Venda {
+	@Id
+	private String nf;
+	
+	@Column
+	private Integer cnh;
+	
+	@Column
+	private boolean aVista;
+	
+	@Column
+	private boolean compDeRes;
+	
+	@Column
+	private boolean compDeRen;
+	
+	@Column
+	private boolean agenFinan;
+	
+	public Venda() {
+		
+	}
+	
+	public Venda(String nf, Integer cnh, boolean aVista, boolean compDeRes, boolean compDeRen,
+			boolean agenFinan) {
+		this.nf = nf;
+		this.cnh = cnh;
+		this.aVista = aVista;
+		this.compDeRes = compDeRes;
+		this.compDeRen = compDeRen;
+		this.agenFinan = agenFinan;
+	}
+
+	public String getNf() {
+		return nf;
+	}
+
+	public void setNf(String nf) {
+		this.nf = nf;
+	}
+
+	public Integer getCnh() {
+		return cnh;
+	}
+
+	public void setCnh(Integer cnh) {
+		this.cnh = cnh;
+	}
+
+	public boolean isaVista() {
+		return aVista;
+	}
+
+	public void setaVista(boolean aVista) {
+		this.aVista = aVista;
+	}
+
+	public boolean isCompDeRes() {
+		return compDeRes;
+	}
+
+	public void setCompDeRes(boolean compDeRes) {
+		this.compDeRes = compDeRes;
+	}
+
+	public boolean isCompDeRen() {
+		return compDeRen;
+	}
+
+	public void setCompDeRen(boolean compDeRen) {
+		this.compDeRen = compDeRen;
+	}
+
+	public boolean isAgenFinan() {
+		return agenFinan;
+	}
+
+	public void setAgenFinan(boolean agenFinan) {
+		this.agenFinan = agenFinan;
+	}
+
+	@Override
+	public String toString() {
+		return "Venda [nf=" + nf + ", cnh=" + cnh + ", aVista=" + aVista + ", comprovanteDeResidencia="
+				+ compDeRes + ", compranteDeRenda=" + compDeRen + ", agenteFinanciador="
+				+ agenFinan + "]";
+	}
+	
+	
+}

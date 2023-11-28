@@ -1,0 +1,78 @@
+package models;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Compra {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_cpf")
+    private Cliente cliente;
+
+    @ManyToOne
+    @JoinColumn(name = "venda_nf")
+    private Venda venda;
+
+    @ManyToOne
+    @JoinColumn(name = "carro_chassi")
+    private Carro carro;
+
+
+    public Compra() {
+
+    }
+
+    public Compra(Cliente cliente, Venda venda, Carro carro) {
+        this.cliente = cliente;
+        this.venda = venda;
+        this.carro = carro;
+        
+    }
+
+    
+
+    public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Venda getVenda() {
+		return venda;
+	}
+
+	public void setVenda(Venda venda) {
+		this.venda = venda;
+	}
+
+	public Carro getCarro() {
+		return carro;
+	}
+
+	public void setCarro(Carro carro) {
+		this.carro = carro;
+	}
+
+	@Override
+    public String toString() {
+        return "Compra [id=" + id + ", cliente=" + cliente + ", venda=" + venda + ", carro=" + carro + "]";
+    }
+}

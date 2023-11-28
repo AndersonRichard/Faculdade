@@ -1,0 +1,124 @@
+package models;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import java.io.Serializable;
+import java.util.Objects;
+
+@Entity
+@IdClass(Compra.CompraId.class)
+public class Compra {
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name="chassi", nullable=false)
+    private Carro carro;
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name="cpf", nullable=false)
+    private Cliente cliente;
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name="nf", nullable=false)
+    private Venda venda;
+
+    public Compra() {}
+
+    public Compra(Carro carro, Cliente cliente, Venda venda) {
+        this.carro = carro;
+        this.cliente = cliente;
+        this.venda = venda;
+    }
+
+    public Carro getCarro() {
+        return carro;
+    }
+
+    public void setCarro(Carro carro) {
+        this.carro = carro;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Venda getVenda() {
+        return venda;
+    }
+
+    public void setVenda(Venda venda) {
+        this.venda = venda;
+    }
+
+    @Override
+    public String toString() {
+        return "Compra [carro=" + carro + ", cliente=" + cliente + ", venda=" + venda + "]";
+    }
+
+    static class CompraId implements Serializable {
+        private Carro carro; // chave primária de Carro
+        private Cliente cliente; // chave primária de Cliente
+        private Venda venda; // chave primária de Venda
+
+        public CompraId() {}
+
+        public CompraId(Carro carro, Cliente cliente, Venda venda) {
+            this.carro = carro;
+            this.cliente = cliente;
+            this.venda = venda;
+        }
+
+        public Carro getCarro() {
+            return carro;
+        }
+
+        public void setCarro(Carro carro) {
+            this.carro = carro;
+        }
+
+        public Cliente getCliente() {
+            return cliente;
+        }
+
+        public void setCliente(Cliente cliente) {
+            this.cliente = cliente;
+        }
+
+        public Venda getVenda() {
+            return venda;
+        }
+
+        public void setVenda(Venda venda) {
+            this.venda = venda;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            CompraId compraId = (CompraId) o;
+            return Objects.equals(carro, compraId.carro) &&
+                    Objects.equals(cliente, compraId.cliente) &&
+                    Objects.equals(venda, compraId.venda);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(carro, cliente, venda);
+        }
+
+        @Override
+        public String toString() {
+            return "CompraId [carro=" + carro + ", cliente=" + cliente + ", venda=" + venda + "]";
+        }
+    }
+}

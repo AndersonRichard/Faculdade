@@ -1,0 +1,148 @@
+package models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Compra {
+    @Id
+    private String nf;
+
+    @ManyToOne
+    @JoinColumn(name = "chassi")
+    private Carro carro;
+
+    @ManyToOne
+    @JoinColumn(name = "cpf")
+    private Cliente cliente;
+
+    @Column
+    private Integer cnh;
+
+    @Column
+    private boolean aVista;
+
+    @Column
+    private boolean comprovanteDeResidencia;
+
+    @Column
+    private boolean compranteDeRenda;
+
+    @Column
+    private boolean agenteFinanciador;
+
+    @Column
+    private String dataCompra;
+
+    @Column
+    private double valorCompra;
+
+    public Compra() {
+
+    }
+
+    public Compra(String nf, Carro carro, Cliente cliente, Integer cnh, boolean aVista, boolean comprovanteDeResidencia,
+            boolean compranteDeRenda, boolean agenteFinanciador, String dataCompra, double valorCompra) {
+        this.nf = nf;
+        this.carro = carro;
+        this.cliente = cliente;
+        this.cnh = cnh;
+        this.aVista = aVista;
+        this.comprovanteDeResidencia = comprovanteDeResidencia;
+        this.compranteDeRenda = compranteDeRenda;
+        this.agenteFinanciador = agenteFinanciador;
+        this.dataCompra = dataCompra;
+        this.valorCompra = valorCompra;
+    }
+
+    public String getNf() {
+        return nf;
+    }
+
+    public void setNf(String nf) {
+        this.nf = nf;
+    }
+
+    public Carro getCarro() {
+        return carro;
+    }
+
+    public void setCarro(Carro carro) {
+        this.carro = carro;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Integer getCnh() {
+        return cnh;
+    }
+
+    public void setCnh(Integer cnh) {
+        this.cnh = cnh;
+    }
+
+    public boolean isaVista() {
+        return aVista;
+    }
+
+    public void setaVista(boolean aVista) {
+        this.aVista = aVista;
+    }
+
+    public boolean isComprovanteDeResidencia() {
+        return comprovanteDeResidencia;
+    }
+
+    public void setComprovanteDeResidencia(boolean comprovanteDeResidencia) {
+        this.comprovanteDeResidencia = comprovanteDeResidencia;
+    }
+
+    public boolean isCompranteDeRenda() {
+        return compranteDeRenda;
+    }
+
+    public void setCompranteDeRenda(boolean compranteDeRenda) {
+        this.compranteDeRenda = compranteDeRenda;
+    }
+
+    public boolean isAgenteFinanciador() {
+        return agenteFinanciador;
+    }
+
+    public void setAgenteFinanciador(boolean agenteFinanciador) {
+        this.agenteFinanciador = agenteFinanciador;
+    }
+
+    public String getDataCompra() {
+        return dataCompra;
+    }
+
+    public void setDataCompra(String dataCompra) {
+        this.dataCompra = dataCompra;
+    }
+
+    public double getValorCompra() {
+        return valorCompra;
+    }
+
+    public void setValorCompra(double valorCompra) {
+        this.valorCompra = valorCompra;
+    }
+
+    @Override
+    public String toString() {
+        return "Compra [nf=" + nf + ", carro=" + carro + ", cliente=" + cliente + ", cnh=" + cnh + ", aVista=" + aVista
+                + ", comprovanteDeResidencia=" + comprovanteDeResidencia + ", compranteDeRenda=" + compranteDeRenda
+                + ", agenteFinanciador=" + agenteFinanciador + ", dataCompra=" + dataCompra + ", valorCompra="
+                + valorCompra + "]";
+    }
+}

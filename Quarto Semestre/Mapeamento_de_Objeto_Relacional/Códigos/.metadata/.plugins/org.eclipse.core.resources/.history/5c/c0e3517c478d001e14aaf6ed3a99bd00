@@ -1,0 +1,97 @@
+package models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Venda {
+	@Id
+	private String nf;
+	
+	@Column
+	private Integer cnh;
+	
+	@Column
+	private boolean aVista;
+	
+	@Column
+	private boolean comprovanteDeResidencia;
+	
+	@Column
+	private boolean compranteDeRenda;
+	
+	@Column
+	private boolean agenteFinanciador;
+	
+	public Venda() {
+		
+	}
+	
+	public Venda(String nf, Integer cnh, boolean aVista, boolean comprovanteDeResidencia, boolean compranteDeRenda,
+			boolean agenteFinanciador) {
+		this.nf = nf;
+		this.cnh = cnh;
+		this.aVista = aVista;
+		this.comprovanteDeResidencia = comprovanteDeResidencia;
+		this.compranteDeRenda = compranteDeRenda;
+		this.agenteFinanciador = agenteFinanciador;
+	}
+
+	public String getNf() {
+		return nf;
+	}
+
+	public void setNf(String nf) {
+		this.nf = nf;
+	}
+
+	public Integer getCnh() {
+		return cnh;
+	}
+
+	public void setCnh(Integer cnh) {
+		this.cnh = cnh;
+	}
+
+	public boolean isaVista() {
+		return aVista;
+	}
+
+	public void setaVista(boolean aVista) {
+		this.aVista = aVista;
+	}
+
+	public boolean isComprovanteDeResidencia() {
+		return comprovanteDeResidencia;
+	}
+
+	public void setComprovanteDeResidencia(boolean comprovanteDeResidencia) {
+		this.comprovanteDeResidencia = comprovanteDeResidencia;
+	}
+
+	public boolean isCompranteDeRenda() {
+		return compranteDeRenda;
+	}
+
+	public void setCompranteDeRenda(boolean compranteDeRenda) {
+		this.compranteDeRenda = compranteDeRenda;
+	}
+
+	public boolean isAgenteFinanciador() {
+		return agenteFinanciador;
+	}
+
+	public void setAgenteFinanciador(boolean agenteFinanciador) {
+		this.agenteFinanciador = agenteFinanciador;
+	}
+
+	@Override
+	public String toString() {
+		return "Venda [nf=" + nf + ", cnh=" + cnh + ", aVista=" + aVista + ", comprovanteDeResidencia="
+				+ comprovanteDeResidencia + ", compranteDeRenda=" + compranteDeRenda + ", agenteFinanciador="
+				+ agenteFinanciador + "]";
+	}
+	
+	
+}

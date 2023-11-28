@@ -1,0 +1,57 @@
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Compra {
+    @Id
+    private String nf;
+
+    @ManyToOne
+    @JoinColumn(name = "chassi")
+    private Carro carro;
+
+    @ManyToOne
+    @JoinColumn(name = "cpf")
+    private Cliente cliente;
+
+    public Compra() {
+    }
+
+    public Compra(String nf, Carro carro, Cliente cliente) {
+        this.nf = nf;
+        this.carro = carro;
+        this.cliente = cliente;
+    }
+
+    public String getNf() {
+        return nf;
+    }
+
+    public void setNf(String nf) {
+        this.nf = nf;
+    }
+
+    public Carro getCarro() {
+        return carro;
+    }
+
+    public void setCarro(Carro carro) {
+        this.carro = carro;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    @Override
+    public String toString() {
+        return "Compra [nf=" + nf + ", carro=" + carro + ", cliente=" + cliente + "]";
+    }
+}

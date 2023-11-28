@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;orm2&apos; to &apos;pra2jpamaven/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;Pratica02&apos;&#x0D;&#x0A;- Destination element: &apos;pra2jpamaven/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;Pratica02/src/orm2&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=pra2jpamaven/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src&lt;orm2" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1699975448787" version="1.0"/>
+</session>

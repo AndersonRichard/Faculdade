@@ -1,0 +1,68 @@
+package services;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import models.Cliente;
+
+public class DataBase {
+	
+	static void Adicionar() {
+		
+	    
+	   
+	    
+	    addEm(teste);
+	    System.out.println("*------------------------*");
+    	System.out.println("|                        |");
+        System.out.println("| Veículo Adicionado:    |");
+		System.out.println("| ID: " + teste.getChassi());
+        System.out.println("| Fabricante: " + fab);
+        System.out.println("| Descrição: " + des);
+        System.out.println("| Versão: " + ver);
+        System.out.println("| Modelo: " + mod);
+        System.out.println("| Ano: " + ano);
+        System.out.println("| Quantidade: " + qtd);
+        System.out.println("|                        |");
+        System.out.println("*------------------------*");
+	 }
+	 
+	
+	static void cadastrarCliente() {
+		Scanner scanner = new Scanner(System.in);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		
+		System.out.println("CPF: ");
+		String cpf = scanner.nextLine();
+		
+		System.out.println("Nome: ");
+		String nome = scanner.nextLine();
+		
+		System.out.println("Telefone: ");
+		String telefone = scanner.nextLine();
+		
+		System.out.println("Endereço: ");
+		String endereco = scanner.nextLine();
+		
+		Cliente cliente = new Cliente(cpf, nome, telefone, endereco);
+		
+		addEm(cliente);
+		
+		
+		System.out.println("Veículo inserido com sucesso!");
+	}
+	
+	static void addEm(Cliente teste) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(teste);	
+		em.getTransaction().commit();
+			
+		
+	 }
+}

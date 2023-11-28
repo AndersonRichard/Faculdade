@@ -1,0 +1,212 @@
+package services;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import models.Carro;
+import models.Cliente;
+
+public class DataBase {
+	
+	public static void cadastrarCliente() {
+		Scanner scanner = new Scanner(System.in);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		
+		System.out.println("CPF: ");
+		String cpf = scanner.nextLine();
+		
+		System.out.println("Nome: ");
+		String nome = scanner.nextLine();
+		
+		System.out.println("Telefone: ");
+		String telefone = scanner.nextLine();
+		
+		System.out.println("Endereço: ");
+		String endereco = scanner.nextLine();
+		
+		Cliente cliente = new Cliente(cpf, nome, telefone, endereco);
+		
+		addEm(cliente);
+		
+		
+		System.out.println("Cliente Adicionado: ");
+		System.out.println("CPF: " + cpf);
+        System.out.println("Nome: " + nome);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("Endereço: " + endereco);
+	}
+	
+	public static void consultarCliente() {
+		Scanner scanner = new Scanner(System.in);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		
+        try {
+        	System.out.println("Digite o CPF: ");
+            String id = scanner.nextLine();
+            
+            Cliente cliente = em.find(Cliente.class, id);
+
+            if (cliente != null) {
+            	System.out.println("Cliente encontrado: ");
+                System.out.println("CPF: " + cliente.getCpf());
+                System.out.println("Nome: " + cliente.getNome());
+                System.out.println("Telefone: " + cliente.getTelefone());
+                System.out.println("Endereço: " + cliente.getEndereco());
+            } else {
+                System.out.println("Cliente com o CPF " + id + " não encontrado.");
+            }
+        } catch (Exception e) {
+            System.out.println("Ocorreu um erro durante a consulta: " + e.getMessage());
+        } finally {
+            em.close();
+        }
+    }
+	
+	public static void atualizarCliente() {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Digite o CPF: ");
+		String id = scanner.nextLine();
+			
+		em.getTransaction().begin();
+			
+		Cliente x = em.find(Cliente.class, id);
+		
+		if(x != null) {		
+			System.out.println("Digite o novo Nome: ");
+			String novoNome = scanner.nextLine();
+			
+			System.out.println("Digite o novo Telefone: ");
+			String novoTelefone = scanner.nextLine();
+			
+			System.out.println("Digite o novo Endereço: ");
+			String novoEndereco = scanner.nextLine();
+			
+			try {
+				x.setNome(novoNome);
+				x.setTelefone(novoTelefone);
+				x.setEndereco(novoEndereco);
+								
+				em.merge(x);
+				
+				em.getTransaction().commit();
+				
+                System.out.println("Cliente Atualizado: ");
+				System.out.println("CPF: " + x.getCpf());
+                System.out.println("Nome: " + x.getNome());
+                System.out.println("Telefone: " + x.getTelefone());
+                System.out.println("Endereço: " + x.getEndereco());
+          
+			} catch(NumberFormatException e) {
+				System.out.println("Cliente Invalido");
+			}
+		} else {
+			System.out.println("Cliente com o CPF " + id + " não encontrado.");
+		}
+		em.close();
+	}
+	
+	public static void removerCliente() {
+		 Scanner scanner = new Scanner(System.in);
+	     EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+	     EntityManager em = emf.createEntityManager();
+	     
+	     try {
+	           	System.out.print("Informe o CPF do Cliente a ser deletado: ");
+	            String id = scanner.nextLine();
+
+	            em.getTransaction().begin();
+	            Cliente c = em.find(Cliente.class, id);
+
+	            if (c != null) {
+	                System.out.println("Detalhes do Cliente ");
+	                System.out.println("CPF: " + c.getCpf());
+	                System.out.println("Nome: " + c.getNome());
+	                System.out.println("Telefone: " + c.getTelefone());
+	                System.out.println("Endereço: " + c.getEndereco());
+
+	                System.out.print("Tem certeza de que deseja deletar este veículo? (S/N): ");
+	                String confirmacao = scanner.next();
+
+	                if (confirmacao.equalsIgnoreCase("S")) {
+	                    em.remove(c);
+	                    em.getTransaction().commit();
+	                    System.out.println("Cliente deletado com sucesso.");
+	                } else {
+	                    System.out.println("Operação de exclusão cancelada.");
+	                }
+	            } else {
+	                System.out.println("\nCliente com o CPF " + id + " não encontrado. Operação de exclusão cancelada.");
+	            }
+	        } catch (Exception e) {
+	            System.out.println("Ocorreu um erro durante a exclusão: " + e.getMessage());
+	        } finally {
+	            em.close();
+	        }
+	}
+		
+	static void addEm(Cliente cliente) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(cliente);	
+		em.getTransaction().commit();
+			
+		
+	 }
+	
+	public static void cadastrarCarro() {
+		Scanner scanner = new Scanner(System.in);
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		
+		System.out.println("Chassi: ");
+		String chassi = scanner.nextLine();
+		
+		System.out.println("Fabricante: ");
+		String fabricante = scanner.nextLine();
+		
+		System.out.println("Descrição: ");
+		String descricao = scanner.nextLine();
+		
+		System.out.println("Ano: ");
+		Integer ano = scanner.nextInt();
+		
+		System.out.println("Modelo: ");
+		String modelo = scanner.nextLine();
+		
+		System.out.println("Cor: ");
+		String cor = scanner.nextLine();
+		
+		Carro carro = new Carro(chassi, fabricante, descricao, ano, modelo, cor);
+		
+		addEm(carro);
+		
+		
+		System.out.println("Carro Adicionado:");
+		System.out.println("Chassi: " + chassi);
+        System.out.println("Fabricante: " + fabricante);
+        System.out.println("Descrição: " + descricao);
+        System.out.println("Ano: " + ano);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Cor:" + cor);
+	}
+	
+	static void addEm(Carro carro) {
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exemplo-jpa");
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(carro);	
+		em.getTransaction().commit();
+			
+		
+	 }
+}
