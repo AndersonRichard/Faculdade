@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <!--Começo do google fontes-->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
-     <!--Fim do google fontes-->
+    <!--Começo do google fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <!--Fim do google fontes-->
 
+    <!--BOOTSTRAP ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!--BOOTSTRAP ICONS-->
+
+    <script src="script.js" defer></script>
+    <link rel="shortcut icon" href="imagens/logo.webp" type="image/x-icon">
     <title>Anderson Richard</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="interface">
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div><!--btn-abrir-menu-->
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="curriculo.html" target="_blank">Currículo</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+
+            </div><!--menu-mobile-->
+
+            <div class="overlay-menu" id="overlay-menu"></div><!--overlay-menu-->
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Currículo</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Projetos</a></li>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="curriculo.html" target="_blank">Currículo</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
                 </ul>
             </nav>
 
             <div class="btn-contato">
-                <a href="#">
+                <a href="contato.html">
                     <button>Contato</button>
                 </a>
             </div><!--btn-contato-->
+
+
         </div><!--interface-->
     </header>
 
@@ -38,18 +66,140 @@
             <div class="interface">
                 <div class="flex">
                     <div class="txt-topo-do-site">
-                        <h1>Welcome<span>.</span></h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, doloribus. Quos incidunt similique nesciunt magnam! Rerum vitae, repellat quaerat nemo, tenetur laboriosam odio iusto doloribus itaque hic maiores accusantium illo?</p>
+                        <h1>Bem-vindo<span>.</span></h1>
+                        <p>Olá! Meu nome é Anderson Richard e sou estudante de Sistemas de Informação. Este é o espaço
+                            onde compartilho meus projetos, experiências e paixões. Convido você a explorar e, caso
+                            tenha alguma dúvida ou interesse em colaborar comigo, por favor, não hesite em entrar em
+                            contato. Agradeço sua visita!</p>
 
-        
-                    </div><!--txt-topo-do-site-->
+                        <div class="btn-contato">
+                            <a href="contato.html">
+                                <button>Entre em Contato</button>
+                            </a>
+                        </div>
+                    </div><!--txt-top-site-->
 
                     <div class="image-topo-do-site">
-                        <img src="imagens/logo.png" alt="">
+                        <img src="imagens/myperson2.jpeg" alt="">
                     </div><!--image-topo-site-->
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--topo-do-site-->
+
+        <section class="especialidades">
+            <div class="interface">
+                <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Front-End</h3>
+                        <p>Minha experiência em desenvolvimento front-end abrange o uso de HTML para estruturação de
+                            páginas, CSS para estilização e JavaScript para interatividade e dinamismo. Juntos, esses
+                            três pilares formam a base do meu conhecimento e habilidades em front-end.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-database-gear"></i>
+                        <h3>Back-End</h3>
+                        <p>Minha experiência em desenvolvimento back-end é focada em Python e Java. Utilizo Python para
+                            criar aplicações web robustas e eficientes. Com Java, emprego o Spring Boot para desenvolver
+                            microserviços escaláveis e seguros. Juntos, Python e Java formam a base do meu conhecimento
+                            e habilidades em back-end.</p>
+                    </div><!--especialidades-box-->
+                    <div class="especialidades-box">
+                        <i class="bi bi-filetype-sql"></i>
+                        <h3>Banco de Dados</h3>
+                        <p>Minha experiência com SQL envolve a criação e gerenciamento de bancos de dados, a realização
+                            de consultas complexas e a otimização do desempenho do banco de dados. SQL é uma ferramenta
+                            essencial que uso para manipular e analisar dados.</p>
+                    </div><!--especialidades-box-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especialidades-->
+
+        <section class="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="imagens/myperson2.jpeg" alt="">
+                    </div><!--img-sobre-->
+
+                    <div class="txt-sobre">
+                        <h2>MUITO PRAZER, <span>SOU ANDERSON RICHARD.</span></h2>
+                        <p>Nascido e criado no sul de Minas Gerais, minha jornada começou em uma pequena cidade e me
+                            levou a oportunidades em lugares cada vez maiores. De empacotador a Analista de Logística,
+                            cada passo da minha carreira me ensinou o valor da dedicação e do esforço.</p>
+                        <p>Hoje, como estudante de Sistemas de Informação e apaixonado por tecnologia, estou sempre
+                            buscando novos desafios. Com experiência em várias linguagens de programação e um projeto de
+                            ensino de lógica de programação, estou pronto para levar minha carreira para o próximo
+                            nível. Seja bem-vindo à minha jornada e sinta-se à vontade para entrar em contato se quiser
+                            saber mais ou discutir possíveis oportunidades. Estou ansioso para contribuir com minhas
+                            habilidades e experiência.</p>
+                        <div class="btn-social">
+                            <a href="https://www.instagram.com/arichardsilva/" target="_blank"><button><i
+                                        class="bi bi-instagram"></i></button></a>
+                            <a href="https://www.linkedin.com/in/anderson-richard-31a849165" target="_blank"><button><i
+                                        class="bi bi-linkedin"></i></button></a>
+                            <a href="https://github.com/AndersonRichard" target="_blank"><button><i
+                                        class="bi bi-github"></i></button></a>
+                        </div><!--btn-social-->
+                    </div><!--txt-sobre-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
+
+        <section class="portifolio">
+            <div class="interface">
+                <h2 class="titulo">MEU <span>PORTIFÓLIO.</span></h2>
+                <div class="flex">
+                    <div class="img-port" style="background-image: url(imagens/projeto01.png);">
+                        <div class="overlay">Hello World</div>
+                    </div>
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--portifolio-->
+
+        <section class="formulario" id="teste">
+            <div class="interface">
+                <h2 class="titulo">FALA <span>COMIGO.</span></h2>
+
+                <form action="mailto:richard-r3@hotmail.com" method="POST" enctype="text/plain">
+                    <input type="text" name="nome" placeholder="Seu nome completo:" required>
+                    <input type="email" name="email" placeholder="Seu email:" required>
+                    <input type="text" name="celular" placeholder="Seu celular:" required>
+                    <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                </form>
+
+            </div><!--interface-->
+        </section><!--formulario-->
     </main>
+
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="images/logo.png" alt="">
+                    </div><!--logo-footer-->
+                    <div class="btn-social">
+                        <a href="https://www.instagram.com/arichardsilva/" target="_blank"><button><i
+                                    class="bi bi-instagram"></i></button></a>
+                        <a href="https://www.linkedin.com/in/anderson-richard-31a849165" target="_blank"><button><i
+                                    class="bi bi-linkedin"></i></button></a>
+                        <a href="https://github.com/AndersonRichard" target="_blank"><button><i
+                                    class="bi bi-github"></i></button></a>
+                    </div><!--btn-social-->
+                </div><!--flex-->
+            </div><!--line-footer-->
+
+            <div class="line-footer borda">
+                <p><a href="mailto:richard-r3@hotmail.com"><i
+                            class="bi bi-envelope-at-fill"></i>richard-r3@hotmail.com</a></p>
+                <p id="txt-footer">&copy; 2023 Anderson Richard. Todos os direitos reservados.</p>
+            </div><!--line-footer-->
+
+        </div><!--interface-->
+    </footer>
 </body>
+
 </html>
