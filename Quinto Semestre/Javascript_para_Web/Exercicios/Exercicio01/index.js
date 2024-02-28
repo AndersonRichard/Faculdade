@@ -36,4 +36,3 @@
 //Questao 10
 //Funções:
 //Declare uma função que aceita dois parâmetros e retorna a soma deles. Chame a função com argumentos e mostre o resultado no console.
-
