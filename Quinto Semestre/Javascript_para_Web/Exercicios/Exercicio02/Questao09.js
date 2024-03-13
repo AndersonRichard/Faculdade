@@ -1,11 +1,8 @@
-function executaCallback(callback) {
 
-    callback();
+function executaCallback(funcao){
+    funcao()
 }
 
-
-function minhaFuncao() {
-    console.log("Teste");
-}
-
-executaCallback(minhaFuncao);
+executaCallback(() => {
+    console.log("Executou o callback")
+})

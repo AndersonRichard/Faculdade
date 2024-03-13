@@ -9,7 +9,7 @@ function concatenaPalavras(parametro1, parametro2){
 console.log(concatenaPalavras("Marcos", "Antonio"))
 
 // Crie uma função chamada primeiroUltimoCaractere que aceite
-// uma tring como parâmetro
+// uma string como parâmetro
 // e retorne uma string contendo o primeiro e o último caractere
 
 function primeiroUltimoCaractere(parametro){

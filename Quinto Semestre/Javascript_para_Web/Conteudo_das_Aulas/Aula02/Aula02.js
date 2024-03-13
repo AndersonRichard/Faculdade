@@ -24,7 +24,7 @@ console.log(texto2)
 
 // Não é possível reatribuir uma variável 
 // constante
-//texto2 = "Outro texto"
+// texto2 = "Outro texto"
 
 
 // outra forma de criar variáveis é utilizando
@@ -133,8 +133,7 @@ console.log(resultado)
 // para ter um resultado numérico
 // preciso converter todas as partes
 // para número
-let resultadoNumerico = 
-    parseInt(numeroTexto) + numero
+let resultadoNumerico = parseInt(numeroTexto) + numero
 console.log(resultadoNumerico)
 
 

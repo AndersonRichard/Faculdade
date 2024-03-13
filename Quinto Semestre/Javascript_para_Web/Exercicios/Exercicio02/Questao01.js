@@ -1,5 +1,5 @@
-function saudacao(nome) {
-    return `Olá, ${nome}! Você aprendeu função.`;
+function saudacao(nomeUsuario) {
+    return `Olá, ${nomeUsuario}! Você aprendeu função.`;
 }
 
 const nomeUsuario = "Anderson Richard";
