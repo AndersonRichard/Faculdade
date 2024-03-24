@@ -13,6 +13,6 @@ function encontrarPosicaoPrimeiraOcorrencia(arr, elemento) {
 }
 
 
-const meuArray = [10, 20, 30, 40, 50];
-const elementoProcurado = 30;
+const meuArray = [10, 20, 30, -1, 50];
+const elementoProcurado = -1;
 encontrarPosicaoPrimeiraOcorrencia(meuArray, elementoProcurado);
