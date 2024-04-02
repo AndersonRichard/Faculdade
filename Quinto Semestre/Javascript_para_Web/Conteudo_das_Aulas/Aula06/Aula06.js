@@ -278,7 +278,7 @@ console.log(comidasSaudaveis);
 
 const professor = {
     ...pessoa, // espalhar o conteúdo dentro deste objeto novo
-    disciplinas: ["Matemática", "Fisica"];
+    disciplinas: ["Matemática", "Fisica"]
 }
 
 console.log(professor);
