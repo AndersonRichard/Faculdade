@@ -4,17 +4,17 @@ const objetoLiteral = {
     // atributos e métodos
 }
 
-const instanciarObjeto = new String()
+const instanciarObjeto = new String();
 
 const objetoComPrototipo = Object.create({}) // null, criar objeto.
 
-objetoLiteral.atributoNovo = "Algum conteúdo"
-console.log(objetoLiteral["atributoNovo"])
+objetoLiteral.atributoNovo = "Algum conteúdo";
+console.log(objetoLiteral["atributoNovo"]);
 
 // arrays associativos // Hash, Map, Dicionário
 
-const nomeDoAtributo = "atributoNovo"
-console.log(objetoLiteral[nomeDoAtributo])
+const nomeDoAtributo = "atributoNovo";
+console.log(objetoLiteral[nomeDoAtributo]);
 
 
 // for/in
@@ -23,7 +23,7 @@ for(propriedade in objetoLiteral){
     // laço de repetição
     // vai colocar dentro da variável propriedade,
     // o nome de um campo do objeto
-    console.log(propriedade)
+    console.log(propriedade);
 }
 
 const aluno = {
