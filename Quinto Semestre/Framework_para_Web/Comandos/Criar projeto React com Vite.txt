@@ -1,0 +1,19 @@
+npm -v
+cd "pasta de trabalho"
+// trocar "my-vue-app" pelo nome do projeto
+// trocar "vue" por "react"
+npm create vite@latest my-vue-app -- --template vue
+
+cd nomedoprojeto
+
+npm install
+
+npm run dev
+
+// Troque bootstrap pelo nome da biblioteca que deseja instalar
+npm install bootstrap
+
+
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
+https://insomnia.rest/download
